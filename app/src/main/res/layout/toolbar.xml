@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorPrimaryDark"
+
+    >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif"
+        android:gravity="center"
+        android:shadowColor="#000000"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="1.2"
+        android:text="UFPI Mobile"
+        android:textColor="@color/colorToolBar"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+</android.support.v7.widget.Toolbar>

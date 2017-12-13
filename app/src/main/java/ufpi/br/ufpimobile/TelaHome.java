@@ -3,14 +3,17 @@ package ufpi.br.ufpimobile;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ImageButton;
+
 
 
 public class TelaHome extends AppCompatActivity implements View.OnClickListener{
 
 
     private ViewHolder mViewHolder = new ViewHolder();
+    private Toolbar toolbarlayout;
 
     /*
         metódo de criação
@@ -19,6 +22,10 @@ public class TelaHome extends AppCompatActivity implements View.OnClickListener{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        toolbarlayout = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbarlayout);
+
         setContentView(R.layout.activity_tela_home);
         //recupera as informações da image view
 

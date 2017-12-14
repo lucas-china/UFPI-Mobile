@@ -3,7 +3,7 @@
     package="ufpi.br.ufpimobile">
 
     <!-- Acesso a internet -->
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
     <!---->
 
     <application
@@ -23,7 +23,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".ErroActivity" />
-        <activity android:name=".MostrarNoticias"></activity>
+        <activity
+            android:name=".MostrarNoticias"
+            android:screenOrientation="portrait"></activity>
     </application>
 
 </manifest>

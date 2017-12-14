@@ -1,16 +1,24 @@
 package ufpi.br.ufpimobile;
 
 import android.content.Intent;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
+import android.widget.ListView;
+import android.widget.Toolbar;
 
 
 public class TelaHome extends AppCompatActivity implements View.OnClickListener{
 
 
     private ViewHolder mViewHolder = new ViewHolder();
+    private String[] mPlanetTitles;
+    private DrawerLayout mDrawerLayout;
+    private ListView mDrawerList;
+    private android.support.v7.widget.Toolbar toolbar;
 
     /*
         metódo de criação
@@ -57,6 +65,20 @@ public class TelaHome extends AppCompatActivity implements View.OnClickListener{
         this.mViewHolder.imageButton_sigaa = findViewById(R.id.im_sigaa);
 
         this.mViewHolder.imageButton_sigaa.setOnClickListener(this);
+
+        /* Setando o toolbar */
+        toolbar = (android.support.v7.widget.Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayShowTitleEnabled(true);
+
+        /* Criando drawerlayout  */
+        mPlanetTitles = getResources().getStringArray(R.array.planets_array);
+        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+        mDrawerList = (ListView) findViewById(R.id.left_drawer);
+
+        // Set the adapter for the list view
+        mDrawerList.setAdapter(new ArrayAdapter<String>(this,
+                android.R.layout.simple_list_item_1, mPlanetTitles));
 
     }
     /*

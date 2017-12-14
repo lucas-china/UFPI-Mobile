@@ -85,21 +85,27 @@ public class TelaHome extends AppCompatActivity implements View.OnClickListener 
     public void onClick(View view) {
 
         int id = view.getId();
-        if (id == R.id.im_noticias) {
-
-            Intent intent = new Intent(getApplicationContext(), MostrarNoticias.class);
-
-            startActivity(intent);
-
-            System.out.println("Hello world");
 
 
-        } else {
-            // passa o contexto da app  e a classe que vai ser redirecionado o fluxo
-            Intent intent = new Intent(getApplicationContext(), ErroActivity.class);
+        switch (id) {
+            case R.id.im_noticias:
+                Intent intent = new Intent(getApplicationContext(), MostrarNoticias.class);
 
-            startActivity(intent);
+                startActivity(intent);
+
+                System.out.println("Hello world");
+                break;
+            case R.id.im_mapa:
+
+                System.out.println("Ainda ta faltando integrar");
+                break;
+
+            default:
+                Intent intentErro = new Intent(getApplicationContext(), ErroActivity.class);
+
+                startActivity(intentErro);
         }
+
 
     }
 

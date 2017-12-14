@@ -22,11 +22,12 @@ public class TelaHome extends AppCompatActivity implements View.OnClickListener{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_tela_home);
 
         toolbarlayout = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbarlayout);
 
-        setContentView(R.layout.activity_tela_home);
+
         //recupera as informações da image view
 
         this.mViewHolder.imageButton_noticia = findViewById(R.id.im_noticias);

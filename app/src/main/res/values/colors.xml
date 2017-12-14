@@ -4,5 +4,14 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
 
+
     <color name="color_toolbar">#2a508e</color>
+
+    <color name="title">#222222</color>
+    <color name="year">#999999</color>
+    <color name="colorAzulClaro">#42A5F5</color>
+
+    <color name="colorToolBar">#90FFFFFF</color>
+
+
 </resources>

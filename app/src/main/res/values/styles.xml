@@ -8,4 +8,8 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="DialogBox" parent="@android:style/Theme.Dialog">
+        <item name="android:windowBackground">@drawable/drawer_shadow</item>
+    </style>
+
 </resources>

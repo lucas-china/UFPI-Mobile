@@ -87,7 +87,7 @@ public class TelaHome extends AppCompatActivity implements View.OnClickListener{
         }
         else{
             // passa o contexto da app  e a classe que vai ser redirecionado o fluxo
-            Intent intent = new Intent(getApplicationContext(),ErroActivity.class);
+            Intent intent = new Intent(getApplicationContext(), ErroActivity.class);
 
             startActivity(intent);
         }

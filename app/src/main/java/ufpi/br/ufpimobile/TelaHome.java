@@ -69,6 +69,10 @@ public class TelaHome extends AppCompatActivity implements View.OnClickListener{
         int id  = view.getId();
         if(id == R.id.im_noticias){
 
+            Intent intent = new Intent(getApplicationContext(),MostrarNoticias.class);
+
+            startActivity(intent);
+
             System.out.println("Hello world");
 
 

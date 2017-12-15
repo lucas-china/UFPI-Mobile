@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="ufpi.br.ufpimobile.Radio"
+    android:orientation="vertical"
+    android:background="#C0C0C0">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar"
+        />
+
+    <ImageView
+        android:layout_width="131dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="67dp"
+        android:src="@drawable/logoufpi"
+        android:scaleType="fitXY"/>
+
+    <Button
+        android:id="@+id/botaoPlayId"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="160dp"
+        android:background="@android:color/darker_gray"
+        android:text="Play" />
+
+
+</LinearLayout>

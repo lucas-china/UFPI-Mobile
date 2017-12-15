@@ -1,16 +1,81 @@
 <resources>
+
     <string name="app_name">UFPI Mobile</string>
 
-    <string-array name="planets_array">
-        <item>Mercury</item>
-        <item>Venus</item>
-        <item>Earth</item>
-        <item>Mars</item>
-    </string-array>
     <string name="title_activity_main">MainActivity</string>
+
+
+    <string name="title_section_anchors">Âncoras</string>
+    <string name="title_section_trace_routes">Traçar Rota</string>
+    <string name="title_section_normal_map">Mapa Normal</string>
+    <string name="title_section_satelite_map">Mapa Satélite</string>
+    <string name="title_section_hibrid_map">Mapa Híbrido</string>
+    <string name="title_section_about">Sobre</string>
+
+    <string name="desenvolvedores">Desenvolvido por:</string>
+    <string name="desenvolvedor_roney">Roney Lira</string>
+    <string name="desenvolvedor_saulo">Saulo de Társio</string>
+    <string name="desenvolvedor_armando">Armando Soares</string>
+    <string name="desenvolvedor_hugo">Hugo Piauilino</string>
+    <string name="desenvolvedor_jose">José de Oliveira</string>
+    <string name="desenvolvedor_francisco">Francisco Carlos</string>
+    <string name="desenvolvedor_renato">Renato Souza</string>
+    <string name="desenvolvedor_valeska">Valeska Uchôa</string>
+    <string name="desenvolvedor_alan">Alan Ribeiro</string>
+    <string name="desenvolvedor_orlando">Orlando Amorim</string>
+    <string name="desenvolvedor_rafael">Rafael Martins Barros</string>
+
+
+    <string name="departamento">Departamento de Computação - UFPI</string>
+    <string name="departamento2">Núcleo de Tecnologia da Informação - NTI</string>
+
+    <string name="logo_ufpi_maps">UFPI Maps</string>
+    <string name="versao">Versão 1.0.0</string>
+
+    <string name="button_colaboradores">Colaboradores</string>
+    <string name="colaborador1">Giovanni Emanuel</string>
+    <string name="colaborador2">Jardeson Barbosa</string>
+    <string name="colaborador3">Roberson Costa</string>
+    <string name="colaborador4">Selles Gustavo</string>
+    <string name="funcaoColaborador">Bacharelandos em Ciência da Computação - UFPI</string>
+    <string name="resumoProjeto">O UFPI Maps é um projeto idealizado na disciplina de
+        Engenharia de Software I, ministrada pelo Prof. Ms. Armando Soares que visa encontrar
+        fisicamente as unidades administrativas e operacionais da UFPI.</string>
+
+    <string name="title_activity_colaboradores_screen">ColaboradoresScreen</string>
+
+    <string name="feedback_text">Deixe seu comentário sobre o aplicativo:</string>
+
+    <string name="send_feedback">Enviar</string>
+
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
-    <string name="action_settings">Settings</string>
+
+    <string name="action_example">Example action</string>
+
+    <string name="action_settings">Avalie-nos!</string>
+    <string name="action_settings2">Sobre</string>
+
+    <string name="api_key">AIzaSyAtpPx8mOlcSkobYz2CHdpuOCdWZmlprQA</string>
+
+    <string name="origin_title">Origem</string>
+    <string name="destination_title">Destino</string>
+    <string name="title_activity_alert_screen">Alert Screen</string>
+    <string name="title_activity_cardapio">CardapioActivity</string>
+    <string name="title_activity_sobre_nos">SobreNos</string>
+
+
+    <!--
+    Lista das API-KEYS utilizadas:
+    Renato Souza: AIzaSyB6w-yATtPK8Kya5YSUoXtg6fyc3CEisJ0
+
+    Hugo Piauilino: AIzaSyDXLEO_RXbR8x4NUAjWb7hGNCnMQ5KCWro
+    Francisco Carlos Silva Junior: AIzaSyCKei5S6Nwf_u0FBhuiaAxntIZuKGcXYpQ
+    Jose Lins: AIzaSyBcpv6KmLg3IcwKCU5TlkVFd3Ik9d-Uc4Q
+    Orlando Amorim: AIzaSyAiLhQ20bR4X-h24-P1ZlzKi0qvmA48-4w
+     -->
+
+
 </resources>

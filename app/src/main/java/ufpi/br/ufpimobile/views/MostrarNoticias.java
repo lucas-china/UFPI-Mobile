@@ -1,4 +1,4 @@
-package ufpi.br.ufpimobile;
+package ufpi.br.ufpimobile.views;
 
 import android.content.Intent;
 import android.os.Bundle;

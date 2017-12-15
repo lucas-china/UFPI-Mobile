@@ -8,8 +8,18 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+
     <style name="AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="DialogBox" parent="@android:style/Theme.Dialog">
+        <item name="android:windowBackground">@drawable/drawer_shadow</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
 
 </resources>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="ufpi.br.ufpimobile.SobreNos"
+    tools:showIn="@layout/activity_sobre_nos"
+    android:orientation="vertical"
+    android:padding="8dp"
+    android:background="#C0C0C0">
+
+    <ImageView
+        android:layout_width="131dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="67dp"
+        android:src="@drawable/logosobrenos"
+        android:scaleType="fitXY"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="A Universidade Federal do Piauí (UFPI) é uma instituição federal de Ensino Superior sediada na cidade de Teresina - Estado do Piauí e com campi nas cidades de Parnaíba, Picos, Floriano e Bom Jesus. A Instituição é mantida pela Fundação Universidade Federal do Piauí - UFPI (criada pela Lei nº 5.528, de 12/11/1968) e é financiada com recursos do Governo Federal."
+        android:layout_marginTop="12dp"
+        android:textSize="19sp"/>
+
+</LinearLayout>

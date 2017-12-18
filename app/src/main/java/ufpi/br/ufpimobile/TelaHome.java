@@ -100,6 +100,10 @@ public class TelaHome extends AppCompatActivity implements View.OnClickListener 
                 System.out.println("Ainda ta faltando integrar");
                 break;
 
+            case R.id.im_contatos:
+
+                break;
+
             default:
                 Intent intentErro = new Intent(getApplicationContext(), ErroActivity.class);
 

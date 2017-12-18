@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     android:scrollbars="vertical"
-    tools:context=".views.MostrarNoticias">
+    tools:context=".MostrarNoticias">
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/show_noticia"

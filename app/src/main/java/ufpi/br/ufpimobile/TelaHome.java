@@ -8,8 +8,7 @@ import android.view.View;
 import android.widget.ImageButton;
 
 
-
-public class TelaHome extends AppCompatActivity implements View.OnClickListener{
+public class TelaHome extends AppCompatActivity implements View.OnClickListener {
 
 
     private ViewHolder mViewHolder = new ViewHolder();
@@ -25,6 +24,8 @@ public class TelaHome extends AppCompatActivity implements View.OnClickListener{
         setContentView(R.layout.activity_tela_home);
 
         toolbarlayout = (Toolbar) findViewById(R.id.toolbar);
+        toolbarlayout.setTitle(R.string.app_name);
+
         setSupportActionBar(toolbarlayout);
 
 
@@ -75,41 +76,44 @@ public class TelaHome extends AppCompatActivity implements View.OnClickListener{
     public void onClick(View view) {
 
         int id = view.getId();
-        if (id == R.id.im_noticias) {
+        switch (id) {
+            case R.id.im_noticias:
+                Intent intent = new Intent(getApplicationContext(), MostrarNoticias.class);
+                startActivity(intent);
+                break;
+            case R.id.im_contatos:
+                break;
+            case R.id.im_sobre:
+                Intent intent1 = new Intent(getApplicationContext(), SobreNos.class);
+                startActivity(intent1);
+                break;
+            case R.id.im_radio:
+                Intent intent2 = new Intent(getApplicationContext(), Radio.class);
+                startActivity(intent2);
+                break;
+            default:
+                Intent intentErro = new Intent(getApplicationContext(), ErroActivity.class);
 
-            Intent intent = new Intent(getApplicationContext(), MostrarNoticias.class);
+                startActivity(intentErro);
 
-            startActivity(intent);
-
-            System.out.println("Hello world");
-        }
-        if (id == R.id.im_sobre){
-            Intent intent = new Intent(getApplicationContext(), SobreNos.class);
-            startActivity(intent);
-        }
-        else {
-           // passa o contexto da app  e a classe que vai ser redirecionado o fluxo
-           Intent intent = new Intent(getApplicationContext(), ErroActivity.class);
-
-           startActivity(intent);
-        }
+            }
 
     }
 
     /*
         classe que agrupa os elementos da activity e é instanciada lá em cima
      */
-    private static class ViewHolder{
+        private static class ViewHolder {
 
-        ImageButton imageButton_contato;
-        ImageButton imageButton_calendario;
-        ImageButton imageButton_sigaa;
-        ImageButton imageButton_restaurante;
-        ImageButton imageButton_sobre;
-        ImageButton imageButton_radio;
-        ImageButton imageButton_noticia;
-        ImageButton imageButton_evento;
-        ImageButton imageButton_mapa;
+            ImageButton imageButton_contato;
+            ImageButton imageButton_calendario;
+            ImageButton imageButton_sigaa;
+            ImageButton imageButton_restaurante;
+            ImageButton imageButton_sobre;
+            ImageButton imageButton_radio;
+            ImageButton imageButton_noticia;
+            ImageButton imageButton_evento;
+            ImageButton imageButton_mapa;
 
+        }
     }
-}

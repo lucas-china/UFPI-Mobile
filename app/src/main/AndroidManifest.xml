@@ -28,7 +28,11 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".SobreNos"
-            android:screenOrientation="portrait" ></activity>
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Radio"
+            android:label="@string/title_activity_radio"
+            android:theme="@style/AppTheme" />
     </application>
 
 </manifest>

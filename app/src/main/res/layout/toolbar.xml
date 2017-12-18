@@ -3,8 +3,8 @@
     android:id="@+id/tool_bar"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/colorPrimaryDark"
-
+    android:background="@color/color_toolbar"
+    android:elevation="6dp"
     >
 
     <TextView

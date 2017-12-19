@@ -26,6 +26,14 @@
         <activity
             android:name=".MostrarNoticias"
             android:screenOrientation="portrait"></activity>
+        <activity android:name=".ContatoActivity" />
+        <activity android:name=".ContatoCoordeGraduacaoActivity" />
+        <activity android:name=".ContatoOrgaoSuplementaresActivity" />
+        <activity android:name=".ContatoProReitoriasActivity" />
+        <activity android:name=".ContatoReitoriaActivity" />
+        <activity android:name=".ContatoUniAcademicasActivity">
+
+        </activity>
     </application>
 
 </manifest>

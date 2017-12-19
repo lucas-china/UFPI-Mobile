@@ -22,7 +22,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ErroActivity" />
+        <activity
+            android:name=".ErroActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".MostrarNoticias"
             android:screenOrientation="portrait" />
@@ -33,7 +35,27 @@
             android:name=".Radio"
             android:label="@string/title_activity_radio"
             android:theme="@style/AppTheme" />
-        <activity android:name=".Sigaa"></activity>
+        <activity
+            android:name=".Sigaa"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ContatoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ContatoCoordeGraduacaoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ContatoOrgaoSuplementaresActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ContatoProReitoriasActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ContatoReitoriaActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ContatoUniAcademicasActivity"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

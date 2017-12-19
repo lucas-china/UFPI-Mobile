@@ -1,83 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    >
+    android:orientation="vertical">
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+    <include
+        android:id="@+id/tool_bar"
+        layout="@layout/toolbar" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Nome     : "
-            android:textColor="@android:color/black"
-            android:textSize="15sp"
-            android:padding="5dp"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/tool_bar"
+        android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/nomeContatoId"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="nome"
-            android:textColor="@android:color/holo_red_dark"
-            android:textSize="15sp"
-            android:padding="5dp"/>
-    </LinearLayout>
+        <ListView
+            android:id="@+id/listViewContatoId"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:padding="5dp" />
+    </RelativeLayout>
 
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-
-            android:text="Contato : "
-            android:textColor="@android:color/black"
-            android:textSize="15sp"
-            android:padding="5dp"/>
-
-
-        <TextView
-            android:id="@+id/nContatoId"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="contato"
-            android:textColor="@android:color/black"
-            android:textSize="15sp"
-            android:padding="5dp"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-
-            android:text="E-mail     : "
-            android:textColor="@android:color/black"
-            android:textSize= "15sp"
-            android:padding="5dp"/>
-
-        <TextView
-            android:id="@+id/emailContatoId"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Descrição"
-            android:textColor="#000"
-            android:textSize="15sp"
-            android:padding="5dp"/>
-    </LinearLayout>
-
-</LinearLayout>
+</RelativeLayout>

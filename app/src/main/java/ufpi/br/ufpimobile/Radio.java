@@ -24,6 +24,9 @@ public class Radio extends AppCompatActivity {
     private boolean play = true;
 
     @Override
+    /**
+     *
+     */
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_radio);
@@ -71,6 +74,9 @@ public class Radio extends AppCompatActivity {
         });
     }
 
+    /**
+     *
+     */
     private class PlayerTask extends AsyncTask<String, Void, Boolean> {
 
         @Override

@@ -80,8 +80,11 @@ public class TelaHome extends AppCompatActivity implements View.OnClickListener 
             case R.id.im_noticias:
                 Intent intent = new Intent(getApplicationContext(), MostrarNoticias.class);
                 startActivity(intent);
+                //System.out.println("Hello world");
                 break;
             case R.id.im_contatos:
+                Intent intent0 = new Intent(getApplicationContext(), ContatoActivity.class);
+                startActivity(intent0);
                 break;
             case R.id.im_sobre:
                 Intent intent1 = new Intent(getApplicationContext(), SobreNos.class);
@@ -97,27 +100,24 @@ public class TelaHome extends AppCompatActivity implements View.OnClickListener 
                 break;
             default:
                 Intent intentErro = new Intent(getApplicationContext(), ErroActivity.class);
-
                 startActivity(intentErro);
-
-            }
-
+        }
     }
 
     /*
         classe que agrupa os elementos da activity e é instanciada lá em cima
      */
-        private static class ViewHolder {
+    private static class ViewHolder {
 
-            ImageButton imageButton_contato;
-            ImageButton imageButton_calendario;
-            ImageButton imageButton_sigaa;
-            ImageButton imageButton_restaurante;
-            ImageButton imageButton_sobre;
-            ImageButton imageButton_radio;
-            ImageButton imageButton_noticia;
-            ImageButton imageButton_evento;
-            ImageButton imageButton_mapa;
+        ImageButton imageButton_contato;
+        ImageButton imageButton_calendario;
+        ImageButton imageButton_sigaa;
+        ImageButton imageButton_restaurante;
+        ImageButton imageButton_sobre;
+        ImageButton imageButton_radio;
+        ImageButton imageButton_noticia;
+        ImageButton imageButton_evento;
+        ImageButton imageButton_mapa;
 
-        }
     }
+}

@@ -21,6 +21,10 @@ public class Sigaa extends AppCompatActivity {
     ProgressBar progressBar;
     private String url="https://sigaa.ufpi.br/sigaa/verTelaLogin.do;jsessionid=1C9116068F873415F66DF0C38CCEA8D7.jb08";
 
+    /**
+     * redireciona para o link do sigaa
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -6,11 +6,17 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
-
+/**
+ * sobre os desenvolvedores
+ */
 public class SobreNos extends AppCompatActivity {
 
     Toolbar toolbar;
 
+    /**
+     *
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

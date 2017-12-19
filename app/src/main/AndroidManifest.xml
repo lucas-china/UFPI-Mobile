@@ -33,6 +33,7 @@
             android:name=".Radio"
             android:label="@string/title_activity_radio"
             android:theme="@style/AppTheme" />
+        <activity android:name=".Sigaa"></activity>
     </application>
 
 </manifest>

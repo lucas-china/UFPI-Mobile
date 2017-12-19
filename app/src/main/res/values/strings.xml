@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">UFPI Mobile</string>
+    <string name="title_activity_radio">Radio</string>
 </resources>

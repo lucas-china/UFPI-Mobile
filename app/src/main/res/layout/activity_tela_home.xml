@@ -4,11 +4,13 @@
     android:id="@+id/telaHome"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/color_fundo_home"
     tools:context="ufpi.br.ufpimobile.TelaHome">
 
     <include
         android:id="@+id/toolbar"
-        layout="@layout/toolbar" />
+        layout="@layout/toolbar"
+        />
 
     <GridLayout
         android:layout_width="wrap_content"

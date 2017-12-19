@@ -13,21 +13,39 @@ import android.widget.ListView;
 
 /**
  * Created by UFPI 236345 on 19/12/2017.
- * implementa a activity_contato que tem
+ * implementa a activity_contato que tem o toolbar e a list view
  */
 
 public class ContatoActivity extends AppCompatActivity {
 
 
     String[] data;
+    private Toolbar toolbar;
 
+    /**
+     * método que cria as instancias das classes filhas e dependendo da posição redireciona para a classe correta
+     * @param savedInstanceState
+     *
+     */
     @Override
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_contato);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar = (Toolbar) findViewById(R.id.tool_bar);
+        toolbar.setTitle("Contatos UFPI");
         setSupportActionBar(toolbar);
-        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent home = new Intent(getApplicationContext(), TelaHome.class);
+                finish();
+                startActivity(home);
+            }
+        });
 
         data = new String[]{"Reitoria", "Pro-reitorias", "Orgãos Suplementares", "Unidades Acadêmicas", "Coordenadorias de Graduação"};
 
@@ -72,7 +90,11 @@ public class ContatoActivity extends AppCompatActivity {
             }
         });
     }
-
+    /**
+     * implementa o voltar pra home
+     * @param item
+     * @return true e volta pra tela home
+     */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 

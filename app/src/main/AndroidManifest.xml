@@ -4,8 +4,8 @@
 
     <!-- Acesso a internet -->
     <uses-permission android:name="android.permission.INTERNET" />
-    <!---->
 
+    <!--  -->
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -22,18 +22,40 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ErroActivity" />
+        <activity
+            android:name=".ErroActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".MostrarNoticias"
-            android:screenOrientation="portrait"></activity>
-        <activity android:name=".ContatoActivity" />
-        <activity android:name=".ContatoCoordeGraduacaoActivity" />
-        <activity android:name=".ContatoOrgaoSuplementaresActivity" />
-        <activity android:name=".ContatoProReitoriasActivity" />
-        <activity android:name=".ContatoReitoriaActivity" />
-        <activity android:name=".ContatoUniAcademicasActivity">
-
-        </activity>
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".SobreNos"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Radio"
+            android:label="@string/title_activity_radio"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".Sigaa"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ContatoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ContatoCoordeGraduacaoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ContatoOrgaoSuplementaresActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ContatoProReitoriasActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ContatoReitoriaActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ContatoUniAcademicasActivity"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

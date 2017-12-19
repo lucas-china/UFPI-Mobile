@@ -1,5 +1,6 @@
 package ufpi.br.ufpimobile;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -15,6 +16,7 @@ import ufpi.br.ufpimobile.model.Contato;
 
 /**
  * Created by UFPI 236345 on 19/12/2017.
+ * implementa os contatos da classe filha  cood graduação
  */
 
 public class ContatoCoordeGraduacaoActivity extends AppCompatActivity {
@@ -22,15 +24,32 @@ public class ContatoCoordeGraduacaoActivity extends AppCompatActivity {
     private ListView listviewCordGradu;
     private ContatoListAdapter adapter;
     private List<Contato> mContatosList;
+    private Toolbar toolbar;
+
+
+    /**
+     * instancia os contatos dos departamentos
+     *
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_contato_coorde_graduacao);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar = (Toolbar) findViewById(R.id.tool_bar);
+        toolbar.setTitle("Contatos UFPI");
         setSupportActionBar(toolbar);
 
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-       // getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent home = new Intent(getApplicationContext(), ContatoActivity.class);
+                finish();
+                startActivity(home);
+            }
+        });
 
         listviewCordGradu = (ListView)findViewById(R.id.listviewCoordGraduacao);
 
@@ -85,6 +104,12 @@ public class ContatoCoordeGraduacaoActivity extends AppCompatActivity {
             }
         });
     }
+
+    /**
+     * implementa o voltar pra home
+     * @param item
+     * @return true e volta pra tela home
+     */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 

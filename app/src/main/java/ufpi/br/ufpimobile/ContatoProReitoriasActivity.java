@@ -1,5 +1,6 @@
 package ufpi.br.ufpimobile;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -22,16 +23,30 @@ public class ContatoProReitoriasActivity extends AppCompatActivity{
     private ListView listviewProReitoria;
     private ContatoListAdapter adapter;
     private List<Contato> mContatosList;
+    private Toolbar toolbar;
+
+    /**
+     * instancia novos contatos e coloca-os na list view da pro reitoria
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_contato_pro_reitorias);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar = (Toolbar) findViewById(R.id.tool_bar);
+        toolbar.setTitle("Contatos UFPI");
         setSupportActionBar(toolbar);
 
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent home = new Intent(getApplicationContext(), ContatoActivity.class);
+                finish();
+                startActivity(home);
+            }
+        });
         listviewProReitoria = (ListView)findViewById(R.id.listviewProReitoria);
 
         mContatosList = new ArrayList<>();
@@ -53,12 +68,26 @@ public class ContatoProReitoriasActivity extends AppCompatActivity{
         listviewProReitoria.setAdapter(adapter);
 
         listviewProReitoria.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+            /**
+             *
+             * @param parent
+             * @param view
+             * @param position
+             * @param id
+             */
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
             }
         });
     }
+
+    /**
+     * implementa o voltar pra home
+     * @param item
+     * @return true e volta pra tela home
+     */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 

@@ -1,6 +1,7 @@
 package ufpi.br.ufpimobile;
 
 import android.content.Intent;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -24,6 +25,7 @@ public class TelaHome extends AppCompatActivity implements View.OnClickListener 
         setContentView(R.layout.activity_tela_home);
 
         toolbarlayout = (Toolbar) findViewById(R.id.toolbar);
+        toolbarlayout.setTitle("UFPI Mobile");
         setSupportActionBar(toolbarlayout);
 
 
@@ -76,31 +78,30 @@ public class TelaHome extends AppCompatActivity implements View.OnClickListener 
         int id = view.getId();
         switch (id) {
             case R.id.im_noticias:
-
                 Intent intent = new Intent(getApplicationContext(), MostrarNoticias.class);
-
                 startActivity(intent);
-
-                System.out.println("Hello world");
-
+                //System.out.println("Hello world");
                 break;
-
-
             case R.id.im_contatos:
-
-                Intent intentContato = new Intent(getApplicationContext(), ContatoActivity.class);
-
-                startActivity(intentContato);
-
+                Intent intent0 = new Intent(getApplicationContext(), ContatoActivity.class);
+                startActivity(intent0);
                 break;
-
+            case R.id.im_sobre:
+                Intent intent1 = new Intent(getApplicationContext(), SobreNos.class);
+                startActivity(intent1);
+                break;
+            case R.id.im_radio:
+                Intent intent2 = new Intent(getApplicationContext(), Radio.class);
+                startActivity(intent2);
+                break;
+            case R.id.im_sigaa:
+                Intent intent3 = new Intent(getApplicationContext(), Sigaa.class);
+                startActivity(intent3);
+                break;
             default:
                 Intent intentErro = new Intent(getApplicationContext(), ErroActivity.class);
-
                 startActivity(intentErro);
-
         }
-
     }
 
     /*

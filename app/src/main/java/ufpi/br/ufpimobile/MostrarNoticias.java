@@ -39,6 +39,10 @@ public class MostrarNoticias extends AppCompatActivity {
     private RecyclerView.LayoutManager mLayoutManager;
     private List<Noticia> noticiaList;
 
+    /**
+     * classe que implementa a conexão com o server
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

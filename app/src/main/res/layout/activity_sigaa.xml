@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="ufpi.br.ufpimobile.Sigaa">
+
+    <include
+        android:id="@+id/toolbar_Sigaa"
+        layout="@layout/toolbar"
+        />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <WebView
+                android:id="@+id/activity_main_webview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                />
+
+            <ProgressBar
+                android:layout_centerHorizontal="true"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_gravity="center"
+                android:id="@+id/progressBar1" />
+
+
+        </FrameLayout>
+
+
+
+
+
+    </RelativeLayout>
+
+
+</LinearLayout>

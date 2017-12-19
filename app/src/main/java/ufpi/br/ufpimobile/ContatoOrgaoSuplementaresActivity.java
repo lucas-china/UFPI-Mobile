@@ -1,5 +1,6 @@
 package ufpi.br.ufpimobile;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -17,6 +18,7 @@ import ufpi.br.ufpimobile.model.Contato;
 
 /**
  * Created by UFPI 236345 on 19/12/2017.
+ * cria os contatos dos orgãos suplementares
  */
 
 public class ContatoOrgaoSuplementaresActivity extends AppCompatActivity {
@@ -24,13 +26,30 @@ public class ContatoOrgaoSuplementaresActivity extends AppCompatActivity {
     private ListView listviewOrgaoSuple;
     private ContatoListAdapter adapter;
     private List<Contato> mContatosList;
+    private Toolbar toolbar;
+
+    /**
+     * instancia novos contatos e coloca-os na list view dos org suplemen
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_contato_orgao_suplementares);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar = (Toolbar) findViewById(R.id.tool_bar);
+        toolbar.setTitle("Contatos UFPI");
         setSupportActionBar(toolbar);
-        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent home = new Intent(getApplicationContext(), ContatoActivity.class);
+                finish();
+                startActivity(home);
+            }
+        });
 
         listviewOrgaoSuple = (ListView)findViewById(R.id.listviewOrgaoSuple);
 
@@ -67,6 +86,12 @@ public class ContatoOrgaoSuplementaresActivity extends AppCompatActivity {
             }
         });
     }
+
+    /**
+     * implementa o voltar pra home
+     * @param item
+     * @return true e volta pra tela home
+     */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 

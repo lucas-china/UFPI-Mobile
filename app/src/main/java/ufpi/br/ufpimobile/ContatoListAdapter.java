@@ -12,6 +12,8 @@ import ufpi.br.ufpimobile.model.Contato;
 
 /**
  * Created by UFPI 236345 on 19/12/2017.
+ * classe que implementa o contato em si  email, nome contato
+ * obtem os ids ...
  */
 
 public class ContatoListAdapter extends BaseAdapter {
@@ -41,6 +43,14 @@ public class ContatoListAdapter extends BaseAdapter {
         return position;
     }
 
+    /**
+     * seta os textos dos text view
+     *
+     * @param position
+     * @param convertView
+     * @param parent
+     * @return uma view
+     */
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 

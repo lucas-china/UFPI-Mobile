@@ -56,7 +56,9 @@
         <activity
             android:name=".ContatoUniAcademicasActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".Calendario"></activity>
+        <activity android:name=".Calendario" />
+        <activity android:name=".RestauranteActivity" />
+        <activity android:name=".VerCardapioActivity"></activity>
     </application>
 
 </manifest>

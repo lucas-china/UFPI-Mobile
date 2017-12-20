@@ -8,7 +8,6 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ImageButton;
 
-
 public class TelaHome extends AppCompatActivity implements View.OnClickListener {
 
 
@@ -101,6 +100,10 @@ public class TelaHome extends AppCompatActivity implements View.OnClickListener 
             case R.id.im_calendario:
                 Intent intent4 = new Intent(getApplicationContext(), Calendario.class);
                 startActivity(intent4);
+                break;
+            case R.id.im_restaurante:
+                Intent intent5 = new Intent(getApplicationContext(), RestauranteActivity.class);
+                startActivity(intent5);
                 break;
             default:
                 Intent intentErro = new Intent(getApplicationContext(), ErroActivity.class);

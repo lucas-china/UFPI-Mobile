@@ -1,19 +1,36 @@
 package ufpi.br.ufpimobile;
 
 import android.content.Intent;
-import android.support.v7.app.ActionBar;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.Toast;
+
+import ufpi.br.ufpimobile.controllers.DownloadJsonAsyncTask;
+import ufpi.br.ufpimobile.model.GeoPointsDatabase;
+import ufpi.br.ufpimobile.model.Node;
+import ufpi.br.ufpimobile.controllers.TestConnection;
+import ufpi.br.ufpimobile.controllers.JsonClass;
+
+import java.util.List;
 
 
-public class TelaHome extends AppCompatActivity implements View.OnClickListener {
+
+public class TelaHome extends AppCompatActivity implements View.OnClickListener, DownloadJsonAsyncTask.AsyncResponse{
 
 
     private ViewHolder mViewHolder = new ViewHolder();
     private Toolbar toolbarlayout;
+
+    private GeoPointsDatabase geoPointsDatabase = new GeoPointsDatabase(this);
+    private TestConnection testaConexao;
+    DownloadJsonAsyncTask asyncTask = new DownloadJsonAsyncTask();
+    private FragmentManager fragmentManager = getSupportFragmentManager();
+
 
     /*
         metódo de criação
@@ -67,6 +84,23 @@ public class TelaHome extends AppCompatActivity implements View.OnClickListener 
 
         this.mViewHolder.imageButton_sigaa.setOnClickListener(this);
 
+        /*#################### Informações de conexão do JSON ###############*/
+        testaConexao = new TestConnection(this);
+
+        if (testaConexao.isConnected()) {
+            Log.v("TestaConexao", "Está conectado");
+
+            //manda o json para ser lido em uma asyncTask
+            JsonClass.setContext(this);
+            asyncTask.delegate = this;
+            //Arquivo json hospedado no site da UFPI
+            //Arquivo json contendo os nós e arestas para criação do grafo utilizando Dijkstra
+            asyncTask.execute("https://infidel-gleams.000webhostapp.com/ufpimaps.json");
+            //geraMapa();
+        } else {
+            Intent iniciarWifi = new Intent(android.provider.Settings.ACTION_WIFI_SETTINGS);
+            //  criarTelaDeAlerta("Sem conexão", "Iniciar Conexão WiFi?", iniciarWifi, null, 1);
+        }
     }
     /*
         metodo que implementa a açao do click do botao
@@ -102,11 +136,60 @@ public class TelaHome extends AppCompatActivity implements View.OnClickListener 
                 Intent intent4 = new Intent(getApplicationContext(), Calendario.class);
                 startActivity(intent4);
                 break;
+            case R.id.im_mapa:
+                Intent intent5 = new Intent(getApplicationContext(), MapsActivity.class);
+                startActivity(intent5);
+                break;
             default:
-                Intent intentErro = new Intent(getApplicationContext(), ErroActivity.class);
-                startActivity(intentErro);
+                Intent intenterro = new Intent(getApplicationContext(), ErroActivity.class);
+                startActivity(intenterro);
         }
     }
+
+    @Override
+    public void processFinish(List<Node> nodes) {
+        geoPointsDatabase.populateDatabase(nodes);
+    }
+
+    //Não precisa mexer ainda
+    protected void onActivityResult(int tipoDeConexaoRequisitada, int resultado, Intent dadosRetornados) {
+        super.onActivityResult(tipoDeConexaoRequisitada, resultado, dadosRetornados);
+        final int TELA_ALERTA_TENTATIVA_1 = 1;
+        final int TELA_ALERTA_TENTATIVA_2 = 2;
+        if (tipoDeConexaoRequisitada == TELA_ALERTA_TENTATIVA_1) {
+            if (resultado == RESULT_OK) {
+                if (testaConexao.isConnected()) {
+
+                } else {
+                    Toast.makeText(this, "Sem conexão Wifi", Toast.LENGTH_LONG).show();
+                    Intent iniciarRedesMoveis = new Intent(android.provider.Settings.ACTION_WIRELESS_SETTINGS);
+                    // criarTelaDeAlerta("Sem Conexão", "Iniciar Conexão via Redes Móveis?", iniciarRedesMoveis, null, TELA_ALERTA_TENTATIVA_2);
+                }
+            } else {
+                Toast.makeText(this, "Sem conexão Wifi", Toast.LENGTH_LONG).show();
+                Intent iniciarRedesMoveis = new Intent(android.provider.Settings.ACTION_WIRELESS_SETTINGS);
+                //criarTelaDeAlerta("Sem Conexão", "Iniciar Conexão via Redes Móveis?", iniciarRedesMoveis, null, TELA_ALERTA_TENTATIVA_2);
+            }
+        } else if (tipoDeConexaoRequisitada == TELA_ALERTA_TENTATIVA_2) {
+            if (resultado == RESULT_OK) {
+                if (testaConexao.isConnected()) {
+
+                } else {
+                    Toast.makeText(this, "Sem conexão com a internet", Toast.LENGTH_LONG).show();
+                    finish();
+                }
+            } else {
+                Toast.makeText(this, "Sem conexão com a internet", Toast.LENGTH_LONG).show();
+                finish();
+            }
+        }
+
+    }
+
+    protected GeoPointsDatabase getGeoPointsDatabase() {
+        return geoPointsDatabase;
+    }
+
 
     /*
         classe que agrupa os elementos da activity e é instanciada lá em cima

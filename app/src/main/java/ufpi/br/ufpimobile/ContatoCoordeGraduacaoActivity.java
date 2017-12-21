@@ -37,7 +37,7 @@ public class ContatoCoordeGraduacaoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_contato_coorde_graduacao);
         toolbar = (Toolbar) findViewById(R.id.tool_bar);
-        toolbar.setTitle("Contatos UFPI");
+        toolbar.setTitle("Coordenadorias de Graduação");
         setSupportActionBar(toolbar);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);

@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     android:scrollbars="vertical"
-    tools:context=".MostrarNoticias">
+    tools:context=".MostrarNoticias"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/toolbar_Noticias"
+        layout="@layout/toolbar"/>
+
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/show_noticia"
@@ -12,9 +18,4 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 
-    <TextView
-        android:id="@+id/show"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-
-</android.support.constraint.ConstraintLayout>
+</LinearLayout>

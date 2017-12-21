@@ -37,7 +37,7 @@ public class ContatoReitoriaActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_contato_reitoria);
         toolbar = (Toolbar) findViewById(R.id.tool_bar);
-        toolbar.setTitle("Contatos UFPI");
+        toolbar.setTitle("Reitoria");
         setSupportActionBar(toolbar);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);

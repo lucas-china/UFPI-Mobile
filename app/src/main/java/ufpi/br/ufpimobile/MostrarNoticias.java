@@ -6,7 +6,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
+import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.android.volley.Request;
@@ -38,7 +40,7 @@ public class MostrarNoticias extends AppCompatActivity {
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
     private List<Noticia> noticiaList;
-
+    private ProgressBar  progressBar;
     /**
      * classe que implementa a conexão com o server
      * @param savedInstanceState
@@ -47,7 +49,23 @@ public class MostrarNoticias extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_noticias);
-        final TextView noticia = (TextView) findViewById(R.id.show);
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_Noticias);
+        toolbar.setTitle("Noticias UFPI");
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent home = new Intent(getApplicationContext(), TelaHome.class);
+                finish();
+                startActivity(home);
+            }
+        });
+
+
+        //final TextView noticia = (TextView) findViewById(R.id.show);
 //        List<Noticia> noticiaList = new ArrayList<Noticia>();
         mRecyclerView = (RecyclerView) findViewById(R.id.show_noticia);
 
@@ -61,7 +79,7 @@ public class MostrarNoticias extends AppCompatActivity {
 
         queue = Volley.newRequestQueue(this);
 
-        String url = "http://10.56.14.220:8000/noticias";
+        String url = "http://192.168.0.110:8000/noticias";
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
                 new Response.Listener<String>() {
                     @Override

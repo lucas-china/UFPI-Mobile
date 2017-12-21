@@ -34,7 +34,7 @@ public class ContatoProReitoriasActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_contato_pro_reitorias);
         toolbar = (Toolbar) findViewById(R.id.tool_bar);
-        toolbar.setTitle("Contatos UFPI");
+        toolbar.setTitle("Pro-reitorias");
         setSupportActionBar(toolbar);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);

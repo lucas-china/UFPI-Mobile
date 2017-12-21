@@ -37,7 +37,7 @@ public class ContatoOrgaoSuplementaresActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_contato_orgao_suplementares);
         toolbar = (Toolbar) findViewById(R.id.tool_bar);
-        toolbar.setTitle("Contatos UFPI");
+        toolbar.setTitle("Orgãos Suplementares");
         setSupportActionBar(toolbar);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);

@@ -1,14 +1,11 @@
 package ufpi.br.ufpimobile;
 
-import android.Manifest;
-import android.content.pm.PackageManager;
+import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-
-import ufpi.br.ufpimobile.model.GeoPointsDatabase;
-import ufpi.br.ufpimobile.model.Node;
+import android.view.View;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -23,7 +20,10 @@ import com.google.android.gms.maps.model.Polyline;
 
 import java.util.List;
 
-public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
+import ufpi.br.ufpimobile.model.GeoPointsDatabase;
+import ufpi.br.ufpimobile.model.Node;
+
+public class MapsActivity extends AppCompatActivity implements OnMapReadyCallback {
 
     //Localização da UFPI
     private static final LatLng ufpiLocation = new LatLng(-5.057772, -42.797009);
@@ -32,12 +32,25 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private int tipoDeMapa = 2; //Mapa Normal
     private Polyline polyline;
     private String type = null; //Tipo do marcador
-    private Toolbar toolbarlayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_Mapa);
+        toolbar.setTitle("Mapa UFPI");
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent home = new Intent(getApplicationContext(), TelaHome.class);
+                finish();
+                startActivity(home);
+            }
+        });
 
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()

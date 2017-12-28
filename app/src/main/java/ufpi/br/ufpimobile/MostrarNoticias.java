@@ -79,7 +79,7 @@ public class MostrarNoticias extends AppCompatActivity {
 
         queue = Volley.newRequestQueue(this);
 
-        String url = "http://192.168.0.110:8000/noticias";
+        String url = "https://ufpi-mobile-cm.herokuapp.com/api/articles";
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
                 new Response.Listener<String>() {
                     @Override

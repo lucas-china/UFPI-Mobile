@@ -1,7 +1,10 @@
 package ufpi.br.ufpimobile;
 
+import android.annotation.TargetApi;
 import android.content.Intent;
 import android.graphics.Color;
+import android.os.Build;
+import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -11,17 +14,28 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.github.sundeepk.compactcalendarview.CompactCalendarView;
 import com.github.sundeepk.compactcalendarview.domain.Event;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
+import java.lang.reflect.Type;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
-import static java.security.AccessController.getContext;
+import ufpi.br.ufpimobile.model.CalendarioDAO;
 
 public class Calendario extends AppCompatActivity {
 
@@ -32,6 +46,10 @@ public class Calendario extends AppCompatActivity {
     private Toolbar toolbar;
     private CompactCalendarView compactCalendarView;
     private boolean shouldShow = false;
+
+    public RequestQueue queue;
+    private List<CalendarioDAO> listCalendario;
+    String url = "https://ufpi-mobile-cm.herokuapp.com/api/calendars/5a4ba0252345bc00043e9b3a";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,7 +67,6 @@ public class Calendario extends AppCompatActivity {
         compactCalendarView = (CompactCalendarView) findViewById(R.id.compactcalendar_view);
         compactCalendarView.setFirstDayOfWeek(Calendar.MONDAY);
 
-        adicionarDatas();
 
         //Alterar o texto da toolbar para a data selecionada
         toolbar = (Toolbar) findViewById(R.id.toolbar_Calendario);
@@ -67,6 +84,10 @@ public class Calendario extends AppCompatActivity {
             }
         });
 
+        queue = Volley.newRequestQueue(this);
+        fetchPosts();
+
+
         // Definir o título na rolagem do calendário
         compactCalendarView.setListener(new CompactCalendarView.CompactCalendarViewListener() {
             @Override
@@ -83,6 +104,7 @@ public class Calendario extends AppCompatActivity {
                     adapter.notifyDataSetChanged();
                 }
             }
+
             @Override
             public void onMonthScroll(Date firstDayOfNewMonth) {
                 toolbar.setTitle(dateFormatForMonth.format(firstDayOfNewMonth));
@@ -99,6 +121,7 @@ public class Calendario extends AppCompatActivity {
                 slideCalendarBut.setText("Minimizar");
 
             }
+
             @Override
             public void onClosed() {
                 slideCalendarBut.setText("Maximizar");
@@ -107,6 +130,7 @@ public class Calendario extends AppCompatActivity {
         });
 
     }
+
 
     private View.OnClickListener getCalendarShowLis() {
         return new View.OnClickListener() {
@@ -124,9 +148,37 @@ public class Calendario extends AppCompatActivity {
         };
     }
 
-    public void adicionarDatas(){
+    private void fetchPosts() {
+        StringRequest request = new StringRequest(Request.Method.GET, url, onPostLoaded, onPostsError);
+        queue.add(request);
+    }
 
-        //13 DE ABRIL
+    private final Response.Listener<String> onPostLoaded = new Response.Listener<String>() {
+        @Override
+        public void onResponse(String response) {
+            Type listType = new TypeToken<ArrayList<CalendarioDAO>>() {
+            }.getType();
+            listCalendario = new Gson().fromJson(response, listType);
+
+            System.out.println("Entrou karai       ***            **8\n");
+
+            adicionarDatas();
+        }
+
+    };
+
+    private final Response.ErrorListener onPostsError = new Response.ErrorListener() {
+        @Override
+        public void onErrorResponse(VolleyError error) {
+            Log.e("PostActivity", error.toString());
+        }
+    };
+
+    public void adicionarDatas() {
+
+        List<Event> eventos = new ArrayList<>();
+
+        /*//13 DE ABRIL
         //É necessário converter a data em https://www.epochconverter.com/
 
         Event abril[] = new Event[10];
@@ -148,7 +200,31 @@ public class Calendario extends AppCompatActivity {
         setemb[0]= new Event(Color.RED, 1504656000000L, "Universidade Federal do Piauí - UFPI");
         compactCalendarView.addEvent(setemb[0]);
         setemb[1]= new Event(Color.BLUE, 1504656000000L, "UFPI Mobile");
-        compactCalendarView.addEvent(setemb[1]);
+        compactCalendarView.addEvent(setemb[1]);*/
+
+
+
+
+
+        if (listCalendario == null) {
+            System.out.println("Lista Nulla!!");
+        } else {
+            for (CalendarioDAO calen : listCalendario) {
+                for (CalendarioDAO.EventsBean event : calen.getEvents()) {
+
+                    if (event.getEndTime() != 0){
+                        eventos.add(new Event(Color.RED, event.getStartTime(), event.getTitle()));
+                        eventos.add(new Event(Color.RED, event.getEndTime(), event.getTitle()));
+                    }
+                    eventos.add(new Event(Color.BLUE, event.getStartTime(), event.getTitle()));
+                    //System.out.println("\n" + event.getTitle() + " --> " + event.getStartTime());
+                }
+            }
+
+            compactCalendarView.addEvents(eventos);
+
+        }
+
 
     }
 }

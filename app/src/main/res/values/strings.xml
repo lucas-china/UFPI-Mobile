@@ -2,4 +2,13 @@
     <string name="app_name">UFPI Mobile</string>
     <string name="title_activity_radio">Radio</string>
     <string name="title_activity_maps">Map</string>
+    <string name="title_activity_ver_cardapio">VerCardapio</string>
+    <string name="tab_text_1">SEG</string>
+    <string name="tab_text_2">TER</string>
+    <string name="tab_text_3">QUA</string>
+    <string name="tab_text_4">QUI</string>
+    <string name="tab_text_5">SEX</string>
+    <string name="tab_text_6">SAB</string>
+    <string name="action_settings">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
 </resources>

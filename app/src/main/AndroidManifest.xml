@@ -37,66 +37,56 @@
         <activity
             android:name=".ErroActivity"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".MostrarNoticias"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".SobreNos"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".Radio"
             android:label="@string/title_activity_radio"
             android:theme="@style/AppTheme" />
-
         <activity
             android:name=".Sigaa"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".ContatoActivity"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".ContatoCoordeGraduacaoActivity"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".ContatoOrgaoSuplementaresActivity"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".ContatoProReitoriasActivity"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".ContatoReitoriaActivity"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".ContatoUniAcademicasActivity"
             android:screenOrientation="portrait" />
-
-        <activity android:name=".Calendario"
-            android:screenOrientation="portrait"/>
-
-        <activity android:name=".RestauranteActivity"
-            android:screenOrientation="portrait"/>
-
-        <activity android:name=".VerCardapioActivity"
-            android:screenOrientation="portrait"/>
-
+        <activity
+            android:name=".Calendario"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".RestauranteActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".MapsActivity"
             android:label="@string/title_activity_maps" />
-
-        <activity android:name=".Eventos"
-            android:screenOrientation="portrait"/>
-
-        <activity android:name=".TelaHome"
-            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".Eventos"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".TelaHome"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".VerCardapio"
+            android:label="@string/title_activity_ver_cardapio"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>

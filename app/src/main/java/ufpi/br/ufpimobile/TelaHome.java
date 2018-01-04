@@ -144,6 +144,10 @@ public class TelaHome extends AppCompatActivity implements View.OnClickListener,
                 Intent intent6 = new Intent(getApplicationContext(), MapsActivity.class);
                 startActivity(intent6);
                 break;
+            case R.id.im_evento:
+                Intent intent7 = new Intent(getApplicationContext(), Eventos.class);
+                startActivity(intent7);
+                break;
             default:
                 Intent intenterro = new Intent(getApplicationContext(), ErroActivity.class);
                 startActivity(intenterro);

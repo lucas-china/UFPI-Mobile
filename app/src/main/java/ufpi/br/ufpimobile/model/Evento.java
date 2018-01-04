@@ -6,30 +6,53 @@ package ufpi.br.ufpimobile.model;
 
 public class Evento {
 
-    private String titulo;
-    private String local;
+
+    /**
+     * title : Feira de Ciência da Química
+     * location : Bloco de Química - UFPI
+     * startDate : 2018-03-03T12:30:00.000Z
+     * createdAt : 2018-01-04T18:49:56.636Z
+     * data : 03/03/2018
+     * hora : 09:30
+     */
+
+    private String title;
+    private String location;
+    private String startDate;
+    private String createdAt;
     private String data;
+    private String hora;
 
-    public Evento(String titulo, String local, String data){
-        this.titulo = titulo;
-        this.local = local;
-        this.data = data;
+    public String getTitle() {
+        return title;
     }
 
-    public String getTitulo() {
-        return titulo;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
+    public String getLocation() {
+        return location;
     }
 
-    public String getLocal() {
-        return local;
+    public void setLocation(String location) {
+        this.location = location;
     }
 
-    public void setLocal(String local) {
-        this.local = local;
+    public String getStartDate() {
+        return startDate;
+    }
+
+    public void setStartDate(String startDate) {
+        this.startDate = startDate;
+    }
+
+    public String getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(String createdAt) {
+        this.createdAt = createdAt;
     }
 
     public String getData() {
@@ -40,5 +63,11 @@ public class Evento {
         this.data = data;
     }
 
+    public String getHora() {
+        return hora;
+    }
 
+    public void setHora(String hora) {
+        this.hora = hora;
+    }
 }

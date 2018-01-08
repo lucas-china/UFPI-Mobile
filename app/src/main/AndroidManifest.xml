@@ -86,7 +86,8 @@
         <activity
             android:name=".VerCardapio"
             android:label="@string/title_activity_ver_cardapio"
-            android:theme="@style/AppTheme"></activity>
+            android:theme="@style/AppTheme" />
+        <activity android:name=".CardapioSemana"></activity>
     </application>
 
 </manifest>

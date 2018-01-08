@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:scrollbars="vertical"
     android:orientation="vertical"
+    android:background="#CFD8DC"
     tools:context="ufpi.br.ufpimobile.Eventos">
 
     <include

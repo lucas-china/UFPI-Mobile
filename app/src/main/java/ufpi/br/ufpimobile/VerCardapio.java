@@ -40,9 +40,27 @@ public class VerCardapio extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ver_cardapio);
 
+        Intent in = getIntent();
+        int i = in.getIntExtra("dia",-1);
+
         //Alterar o texto da toolbar para a data selecionada
         toolbar = (Toolbar) findViewById(R.id.toolbar_VerCardapio);
-        toolbar.setTitle("Cardápio da Semana");
+
+        switch (i) {
+            case 1: toolbar.setTitle("Cardápio de Segunda-Feira");
+                break;
+            case 2: toolbar.setTitle("Cardápio de Terça-Feira");
+                break;
+            case 3: toolbar.setTitle("Cardápio de Quarta-Feira");
+                break;
+            case 4: toolbar.setTitle("Cardápio de Quinta-Feira");
+                break;
+            case 5: toolbar.setTitle("Cardápio de Sexta-Feira");
+                break;
+            case 6: toolbar.setTitle("Cardápio de Sábado");
+                break;
+                default: toolbar.setTitle("Cardápio da Semana");
+        }
         setSupportActionBar(toolbar);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -50,7 +68,7 @@ public class VerCardapio extends AppCompatActivity {
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent home = new Intent(getApplicationContext(), TelaHome.class);
+                Intent home = new Intent(getApplicationContext(), CardapioSemana.class);
                 finish();
                 startActivity(home);
             }
@@ -122,12 +140,9 @@ public class VerCardapio extends AppCompatActivity {
         @Override
         public Fragment getItem(int position) {
             switch (position) {
-                case 1: return CardapioFragment.newInstance("Fritada Mista");
-                case 2: return CardapioFragment.newInstance("Bife Pomodoro");
-                case 3: return CardapioFragment.newInstance("Frango Assado");
-                case 4: return CardapioFragment.newInstance("Feijoada");
-                case 5: return CardapioFragment.newInstance("Baião de Dois");
-                case 6: return CardapioFragment.newInstance("Peixe");
+                case 0: return CardapioFragment.newInstance("Fritada Mista");
+                case 1: return CardapioFragment.newInstance("Bife Pomodoro");
+                case 2: return CardapioFragment.newInstance("Frango Assado");
             }
             return CardapioFragment.newInstance("FECHADO");
         }
@@ -135,7 +150,7 @@ public class VerCardapio extends AppCompatActivity {
         @Override
         public int getCount() {
             // Show 6 total pages.
-            return 6;
+            return 3;
         }
     }
 }

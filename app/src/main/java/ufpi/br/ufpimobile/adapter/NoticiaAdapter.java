@@ -15,9 +15,6 @@ import java.util.List;
 import ufpi.br.ufpimobile.model.Noticia;
 import ufpi.br.ufpimobile.R;
 
-/**
- * Created by jonin on 28/11/2017.
- */
 
 public class NoticiaAdapter extends RecyclerView.Adapter<NoticiaAdapter.MyViewHolder> {
 

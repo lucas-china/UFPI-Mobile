@@ -1,65 +1,49 @@
-package ufpi.br.ufpimobile;
+package ufpi.br.ufpimobile.Maps;
 
-import android.content.Intent;
+
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
+import android.support.v4.app.Fragment;
+import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
-import com.google.android.gms.maps.model.Polyline;
 
 import java.util.List;
 
+import ufpi.br.ufpimobile.R;
 import ufpi.br.ufpimobile.model.GeoPointsDatabase;
 import ufpi.br.ufpimobile.model.Node;
 
-public class MapsActivity extends AppCompatActivity implements OnMapReadyCallback {
+/**
+ * A simple {@link Fragment} subclass.
+ */
+public class FragmentBiblioteca extends SupportMapFragment implements OnMapReadyCallback {
 
     //Localização da UFPI
-    private static final LatLng ufpiLocation = new LatLng(-5.057772, -42.797009);
-    private MapView mapView;
+    private static LatLng ufpiLocation = null;
+    //  private MapView mapView;
     private GoogleMap mMap;
-    private int tipoDeMapa = 2; //Mapa Normal
-    private Polyline polyline;
-    private String type = null; //Tipo do marcador
+    // private int tipoDeMapa = 2; //Mapa Normal
+    //   private Polyline polyline;
+    private String type = "9"; //Tipo do marcador
+    private static final String TAG = "MapsActivity";
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_maps);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_Mapa);
-        toolbar.setTitle("Mapa UFPI");
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent home = new Intent(getApplicationContext(), TelaHome.class);
-                finish();
-                startActivity(home);
-            }
-        });
-
-        // Obtain the SupportMapFragment and get notified when the map is ready to be used.
-        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
-                .findFragmentById(R.id.map);
-
-        mapFragment.getMapAsync(this);
-
-        //Tipo referente aos Departamentos
-        type = "2";
+    public void onCreate(Bundle savedInstanceStatee) {
+        ufpiLocation = new LatLng(-5.0565465, -42.7946826);
+        //mudarTipoDeMapa(3);
+        super.onCreate(savedInstanceStatee);
+        getMapAsync(this);
     }
 
 
@@ -76,36 +60,25 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
+
+        mMap.getUiSettings().setZoomControlsEnabled(true);
+
+        mMap.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
+
+        addMarkerByType(type); //Adiciona marcadores ao mapa
+
+        try {
+            mMap.setMyLocationEnabled(true);
+        }catch (SecurityException e){
+            Log.e(TAG, "Error",e);
+        }
         CameraPosition cameraPosition = new CameraPosition.Builder()
                 .target(ufpiLocation)      // Sets the center of the map to UFPI
                 .zoom(15)                   // Sets the zoom
                 .tilt(30)                   // Sets the tilt of the camera to 30 degrees
                 .build();                   // Creates a CameraPosition from the builder
-        googleMap.moveCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
+        mMap.moveCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
 
-        /*
-        *      Não mexer
-
-        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            // TODO: Consider calling
-
-            System.out.println("Não tem permissão");
-            //    ActivityCompat#requestPermissions
-            // here to request the missing permissions, and then overriding
-            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-            //                                          int[] grantResults)
-            // to handle the case where the user grants the permission. See the documentation
-            // for ActivityCompat#requestPermissions for more details.
-            return;
-        }
-        mMap.setMyLocationEnabled(true);
-        */
-
-        //Setar tipo de mapa como vista por satelite
-        mMap.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
-        //mudarTipoDeMapa();
-
-        addMarkerByType(type); //Adiciona marcadores ao mapa
 
         // Add a marker in Sydney and move the camera
         // LatLng sydney = new LatLng(-34, 151);
@@ -117,7 +90,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     public void addMarkerByType(String type) {
         if (type != null) {
 
-            GeoPointsDatabase m = new GeoPointsDatabase(this);
+            GeoPointsDatabase m = new GeoPointsDatabase(getContext());
             //Pesquisa os pontos no banco de dados por tipo
             List<Node> nodes = m.selectByType(type);
             if (nodes.size() > 0) {
@@ -143,15 +116,12 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     }
 
     //Metodo autoexplicativo
-    public void mudarTipoDeMapa() {
-
-        //Log.i("TipoMapa", "Entrou no mudarTipoDeMapa");
-        //Log.i("TipoMapa", "tipoDeMapa = " + tipoDeMapa);
-        switch (tipoDeMapa) {
-            case 2:
+    public void mudarTipoDeMapa(int mudar) {
+        switch (mudar) {
+            case 1:
                 mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
                 break;
-            case 4:
+            case 2:
                 mMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
                 break;
             case 3:

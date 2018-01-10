@@ -287,4 +287,13 @@ public class GeoPointsDatabase extends SQLiteOpenHelper {
             }
         }
     }
+
+    /**
+     *Metodo para deletar o banco de dados
+    */
+     public void deleteDatabase(Context context){
+         context.deleteDatabase(DATABASE_NAME);
+     }
+
+
 }

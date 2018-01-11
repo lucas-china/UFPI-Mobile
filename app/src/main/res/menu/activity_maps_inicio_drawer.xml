@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_home"
+            android:title="Home" />
+        <item android:title="Âncoras">
+            <menu>
+                <item
+                    android:id="@+id/nav_auditorio"
+                    android:title="Auditorios" />
+                <item
+                    android:id="@+id/nav_banheiros"
+                    android:title="Banheiros" />
+                <item
+                    android:id="@+id/nav_bibliotecas"
+                    android:title="Bibliotecas" />
+                <item
+                    android:id="@+id/nav_centros"
+                    android:title="Centros" />
+                <item
+                    android:id="@+id/nav_cursos"
+                    android:title="Cursos" />
+                <item
+                    android:id="@+id/nav_departamentos"
+                    android:title="Departamentos" />
+                <item
+                    android:id="@+id/nav_onibus"
+                    android:title="Estacoes de Onibus" />
+                <item
+                    android:id="@+id/nav_laboratorios"
+                    android:title="Laboratorio" />
+                <item
+                    android:id="@+id/nav_lanchonetes"
+                    android:title="Lanchonetes" />
+                <item
+                    android:id="@+id/nav_orgaos"
+                    android:title="Órgãos Centrais" />
+                <item
+                    android:id="@+id/nav_posgraduacao"
+                    android:title="Pós-Graduacao" />
+                <item
+                    android:id="@+id/nav_salas"
+                    android:title="Salas de Aula" />
+
+            </menu>
+        </item>
+        <item android:title="Rotas">
+            <menu>
+            <item
+                android:id="@+id/nav_tracarrotas"
+                android:title="Traçar Rotas" />
+            </menu>
+        </item>
+    </group>
+
+</menu>

@@ -2,6 +2,12 @@
     <string name="app_name">UFPI Mobile</string>
     <string name="title_activity_radio">Radio</string>
     <string name="title_activity_maps">Map</string>
+    <string name="title_activity_maps_inicio">UFPI Maps</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="nav_drawer">Nada</string>
     <string name="title_activity_ver_cardapio">VerCardapio</string>
     <string name="tab_text_1">RU 1</string>
     <string name="tab_text_2">RU 2</string>

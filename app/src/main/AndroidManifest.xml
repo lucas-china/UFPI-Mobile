@@ -12,6 +12,8 @@
     -->
     <!-- Acesso a localização atual do dispositivo -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
 
     <application
         android:allowBackup="true"
@@ -75,14 +77,15 @@
             android:name=".RestauranteActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".MapsActivity"
-            android:label="@string/title_activity_maps" />
-        <activity
             android:name=".Eventos"
             android:screenOrientation="portrait" />
         <activity
             android:name=".TelaHome"
             android:screenOrientation="portrait" />
+        <activity
+            android:name=".MapsInicio"
+            android:label="@string/title_activity_maps_inicio"
+            android:theme="@style/AppTheme" />
         <activity
             android:name=".VerCardapio"
             android:label="@string/title_activity_ver_cardapio"
@@ -90,7 +93,6 @@
         <activity android:name=".CardapioSemana" />
         <activity android:name=".NoticiaEspecificaActivity" />
         <activity android:name=".ShowImages"></activity>
-
     </application>
 
 </manifest>

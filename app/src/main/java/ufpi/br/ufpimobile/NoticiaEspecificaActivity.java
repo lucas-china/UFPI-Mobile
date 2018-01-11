@@ -97,7 +97,7 @@ public class NoticiaEspecificaActivity extends AppCompatActivity {
 
 
 
-        String url ="http://10.56.14.220:8000/noticiaespecifica";
+        String url ="http://192.168.0.110:8000/noticiaespecifica";
         // to -  do
         //"https://ufpi-mobile-cm.herokuapp.com/api/articles"
         StringRequest stringRequest = new StringRequest(Request.Method.POST, url,

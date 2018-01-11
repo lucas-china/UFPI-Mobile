@@ -86,7 +86,7 @@ public class MostrarNoticias extends AppCompatActivity {
 
         //String url = "https://ufpi-mobile-cm.herokuapp.com/api/articles";
 
-        String url = "http://10.56.14.220:8000/noticias";
+        String url = "http://192.168.0.110:8000/noticias";
 
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
                 new Response.Listener<String>() {

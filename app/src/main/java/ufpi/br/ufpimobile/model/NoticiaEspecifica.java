@@ -6,7 +6,7 @@ package ufpi.br.ufpimobile.model;
 
 public class NoticiaEspecifica {
 
-    public String texto;
+    public String text;
     public String href;
     public String img;
     public Boolean link;
@@ -14,7 +14,7 @@ public class NoticiaEspecifica {
     public Boolean etext;
 
     public NoticiaEspecifica(String texto, String href, String img, Boolean link, Boolean eimg, Boolean etext) {
-        this.texto = texto;
+        this.text = texto;
         this.href = href;
         this.img = img;
         this.link = link;
@@ -23,11 +23,11 @@ public class NoticiaEspecifica {
     }
 
     public String getTexto() {
-        return texto;
+        return text;
     }
 
     public void setTexto(String texto) {
-        this.texto = texto;
+        this.text = texto;
     }
 
     public String getHref() {

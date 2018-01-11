@@ -4,7 +4,7 @@
     android:id="@+id/telaHome"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/color_fundo_home"
+    android:background="#CFD8DC"
     tools:context="ufpi.br.ufpimobile.TelaHome">
 
     <include

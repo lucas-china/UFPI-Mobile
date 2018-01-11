@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#CFD8DC"
+
+
+    tools:context="ufpi.br.ufpimobile.CardapioSemana">
+
+    <include
+        android:id="@+id/toolbar_CardSemana"
+        layout="@layout/toolbar"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingTop="16dp"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp">
+
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/seg"
+            android:text="SEGUNDA"
+            android:textColor="#fff"
+            android:background="@drawable/style_botton2"
+            android:textSize="16sp"
+
+            />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/ter"
+            android:text="TERÇA"
+            android:background="@drawable/style_botton2"
+            android:textSize="16sp"
+            android:textColor="#fff"
+            android:layout_marginTop="30dp"
+            />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/qua"
+            android:text="QUARTA"
+            android:background="@drawable/style_botton2"
+            android:textSize="16sp"
+            android:textColor="#fff"
+            android:layout_marginTop="30dp"
+            />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/qui"
+            android:text="QUINTA"
+            android:background="@drawable/style_botton2"
+            android:textSize="16sp"
+            android:textColor="#fff"
+            android:layout_marginTop="30dp"
+            />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/sex"
+            android:text="SEXTA"
+            android:textColor="#fff"
+            android:background="@drawable/style_botton2"
+            android:textSize="16sp"
+            android:layout_marginTop="30dp"
+            />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/sab"
+            android:text="SABADO"
+            android:background="@drawable/style_botton2"
+            android:textSize="16sp"
+            android:textColor="#fff"
+            android:layout_marginTop="30dp"
+            />
+    </LinearLayout>
+
+</LinearLayout>

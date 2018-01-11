@@ -35,6 +35,7 @@ dependencies {
     compile 'com.github.sundeepk:compact-calendar-view:2.0.2.2'
     compile 'com.google.code.gson:gson:2.2.4'
     compile 'com.firebase:firebase-client-android:2.3.0+'
+    compile 'com.squareup.picasso:picasso:2.5.2'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
 

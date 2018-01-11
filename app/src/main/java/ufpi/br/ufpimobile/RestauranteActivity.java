@@ -33,7 +33,7 @@ public class RestauranteActivity extends AppCompatActivity {
         final Button button = findViewById(R.id.cardapioButton);
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                Intent i = new Intent(getApplicationContext(), VerCardapioActivity.class);
+                Intent i = new Intent(getApplicationContext(), CardapioSemana.class);
                 startActivity(i);
             }
         });

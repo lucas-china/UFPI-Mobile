@@ -2,10 +2,11 @@ package ufpi.br.ufpimobile;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ProgressBar;
@@ -24,7 +25,6 @@ import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
-import ufpi.br.ufpimobile.R;
 import ufpi.br.ufpimobile.adapter.ClickListener;
 import ufpi.br.ufpimobile.adapter.NoticiaAdapter;
 import ufpi.br.ufpimobile.adapter.RecyclerTouchListener;
@@ -40,9 +40,12 @@ public class MostrarNoticias extends AppCompatActivity {
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
     private List<Noticia> noticiaList;
-    private ProgressBar  progressBar;
+    private ProgressBar progressBar;
+    private TextView noticia;
+
     /**
      * classe que implementa a conexão com o server
+     *
      * @param savedInstanceState
      */
     @Override
@@ -64,6 +67,8 @@ public class MostrarNoticias extends AppCompatActivity {
             }
         });
 
+        noticia = (TextView) findViewById(R.id.show);
+
 
         //final TextView noticia = (TextView) findViewById(R.id.show);
 //        List<Noticia> noticiaList = new ArrayList<Noticia>();
@@ -79,7 +84,10 @@ public class MostrarNoticias extends AppCompatActivity {
 
         queue = Volley.newRequestQueue(this);
 
-        String url = "https://ufpi-mobile-cm.herokuapp.com/api/articles";
+        //String url = "https://ufpi-mobile-cm.herokuapp.com/api/articles";
+
+        String url = "http://10.56.14.220:8000/noticias";
+
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
                 new Response.Listener<String>() {
                     @Override
@@ -96,7 +104,7 @@ public class MostrarNoticias extends AppCompatActivity {
                 }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-//                noticia.setText("That didn't work!");
+                noticia.setText("That didn't work!");
             }
         });
         queue.add(stringRequest);
@@ -105,12 +113,13 @@ public class MostrarNoticias extends AppCompatActivity {
                 mRecyclerView, new ClickListener() {
             @Override
             public void onClick(View view, final int position) {
-                //Values are passing to activity & to fragment as well
-//                try{
-//                    noticia.setText(noticiaList.get(position).get_data());
-//                }catch (Exception e){
-////                    noticia.setText("Não Deu!");
-//                }
+
+                String href = noticiaList.get(position).getHref();
+                String title = noticiaList.get(position).getTitulo();
+                Intent troca = new Intent(MostrarNoticias.this, NoticiaEspecificaActivity.class);
+                troca.putExtra("href", href);
+                troca.putExtra("title", title);
+                MostrarNoticias.this.startActivity(troca);
 
             }
 

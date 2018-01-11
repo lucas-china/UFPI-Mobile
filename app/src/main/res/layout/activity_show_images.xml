@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?android:attr/selectableItemBackground"
+    android:clickable="true"
+    android:focusable="true"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/row_padding_vertical"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/row_padding_vertical"
+    tools:context="ufpi.br.ufpimobile.ShowImages">
+
+    <ImageView
+        android:id="@+id/imgsw"
+        android:layout_width="372dp"
+        android:layout_height="334dp"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/Anterior"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="400dp"
+        android:background="?attr/colorPrimaryDark"
+        android:text="Anterior"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/Proximo"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="400dp"
+        android:background="?attr/colorPrimaryDark"
+        android:text="Próximo" />
+
+</RelativeLayout>

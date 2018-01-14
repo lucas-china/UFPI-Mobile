@@ -1,0 +1,57 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:background="#fff"
+    android:id="@+id/main_content">
+
+    <include
+        android:id="@+id/toolbar_CalendarioCTT"
+        layout="@layout/toolbar"/>
+
+    <com.github.sundeepk.compactcalendarview.CompactCalendarView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/compactcalendar_view"
+        android:layout_below="@+id/toolbar_CalendarioCTT"
+        android:layout_width="fill_parent"
+        android:layout_height="250dp"
+        app:compactCalendarTargetHeight="250dp"
+        app:compactCalendarTextSize="14sp"
+        app:compactCalendarBackgroundColor="#fcfafa"
+        app:compactCalendarTextColor="#0e0e0e"
+        app:compactCalendarCurrentSelectedDayBackgroundColor="#6cc9ff"
+        app:compactCalendarCurrentDayBackgroundColor="#6bfa9d"
+        app:compactCalendarCurrentDayIndicatorStyle="fill_large_indicator"
+        app:compactCalendarEventIndicatorStyle="small_indicator"
+        app:compactCalendarOtherMonthDaysTextColor="#534c4c"
+        app:compactCalendarShouldSelectFirstDayOfMonthOnScroll="true"
+        />
+
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:id="@+id/calendar_control_buttons_2"
+        android:layout_below="@+id/compactcalendar_view"
+        android:layout_height="wrap_content">
+
+
+        <Button
+            android:id="@+id/slide_calendar"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="Minimizar"
+            />
+
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/datas_listview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/calendar_control_buttons_2"/>
+
+
+</RelativeLayout>

@@ -72,11 +72,9 @@ public class Radio extends AppCompatActivity {
 
             }
         });
-    }
 
-    /**
-     *
-     */
+
+    }
     private class PlayerTask extends AsyncTask<String, Void, Boolean> {
 
         @Override
@@ -124,4 +122,6 @@ public class Radio extends AppCompatActivity {
             mediaPlayer.release();
         }
     }
+
+
 }

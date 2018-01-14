@@ -14,10 +14,9 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
-
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/ic_launcher_round"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
@@ -71,7 +70,7 @@
             android:name=".ContatoUniAcademicasActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Calendario"
+            android:name=".CalendarioGrad"
             android:screenOrientation="portrait" />
         <activity
             android:name=".RestauranteActivity"
@@ -92,7 +91,10 @@
             android:theme="@style/AppTheme" />
         <activity android:name=".CardapioSemana" />
         <activity android:name=".NoticiaEspecificaActivity" />
-        <activity android:name=".ShowImages"></activity>
+        <activity android:name=".ShowImages" />
+        <activity android:name=".EscolherCalendario" />
+        <activity android:name=".CalendarioCTT" />
+        <activity android:name=".CalendarioPos"></activity>
     </application>
 
 </manifest>

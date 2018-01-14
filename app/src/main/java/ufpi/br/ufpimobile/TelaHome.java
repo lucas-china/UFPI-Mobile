@@ -99,7 +99,7 @@ public class TelaHome extends AppCompatActivity implements View.OnClickListener{
                 startActivity(intent3);
                 break;
             case R.id.im_calendario:
-                Intent intent4 = new Intent(getApplicationContext(), Calendario.class);
+                Intent intent4 = new Intent(getApplicationContext(), EscolherCalendario.class);
                 startActivity(intent4);
                 break;
             case R.id.im_restaurante:

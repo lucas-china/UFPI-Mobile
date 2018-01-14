@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:animateLayoutChanges="true"
-    android:background="@color/color_fundo_home"
+    android:background="#fff"
     android:id="@+id/main_content">
 
     <include
@@ -42,7 +42,8 @@
             android:id="@+id/slide_calendar"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:text="Minimizar" />
+            android:text="Minimizar"
+            />
 
     </LinearLayout>
 

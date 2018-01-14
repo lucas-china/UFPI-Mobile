@@ -10,7 +10,7 @@
         android:color="@color/botoes_home"
         />
     <stroke
-        android:color="@android:color/background_dark"
+        android:color="#005cb2"
         android:width="2dp"
         />
 

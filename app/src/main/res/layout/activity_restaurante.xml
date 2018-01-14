@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/color_fundo_home"
+    android:background="#fff"
     tools:context="ufpi.br.ufpimobile.RestauranteActivity">
 
     <include
@@ -35,7 +35,8 @@
             android:layout_height="0dp"
             android:layout_weight="2"
             android:text="Segunda a Sexta:"
-            android:textSize="20dp"
+            android:textSize="20sp"
+            android:textColor="#000"
             android:padding="8dp"
             android:textAlignment="textStart" />
 
@@ -51,6 +52,7 @@
                 android:layout_weight="3"
                 android:text="Almoço"
                 android:textSize="20sp"
+                android:textColor="#000"
                 android:padding="8dp"
                 android:textAlignment="textStart" />
 
@@ -60,6 +62,7 @@
                 android:layout_weight="2"
                 android:text="11:00 - 13:30"
                 android:textSize="20sp"
+                android:textColor="#000"
                 android:padding="8dp"
                 android:textAlignment="textEnd" />
         </LinearLayout>
@@ -76,6 +79,7 @@
                 android:layout_weight="3"
                 android:text="Jantar"
                 android:textSize="20sp"
+                android:textColor="#000"
                 android:padding="8dp"
                 android:textAlignment="textStart" />
 
@@ -85,6 +89,7 @@
                 android:layout_weight="2"
                 android:text="17:00 - 18:30"
                 android:textSize="20sp"
+                android:textColor="#000"
                 android:padding="8dp"
                 android:textAlignment="textEnd" />
         </LinearLayout>
@@ -121,6 +126,7 @@
                 android:layout_weight="3"
                 android:text="Alunos"
                 android:textSize="20sp"
+                android:textColor="#000"
                 android:padding="8dp"
                 android:textAlignment="textStart" />
 
@@ -130,6 +136,7 @@
                 android:layout_weight="1"
                 android:text="R$ 0,80"
                 android:textSize="20sp"
+                android:textColor="#000"
                 android:padding="8dp"
                 android:textAlignment="textEnd" />
         </LinearLayout>
@@ -146,6 +153,7 @@
                 android:layout_weight="3"
                 android:text="Funcionários e Terceirizados"
                 android:textSize="20sp"
+                android:textColor="#000"
                 android:padding="8dp"
                 android:textAlignment="textStart" />
 
@@ -155,6 +163,7 @@
                 android:layout_weight="1"
                 android:text="R$ 1,25"
                 android:textSize="20sp"
+                android:textColor="#000"
                 android:padding="8dp"
                 android:textAlignment="textEnd" />
         </LinearLayout>
@@ -171,6 +180,7 @@
                 android:layout_weight="3"
                 android:text="Visitantes"
                 android:textSize="20sp"
+                android:textColor="#000"
                 android:padding="8dp"
                 android:textAlignment="textStart" />
 
@@ -180,6 +190,7 @@
                 android:layout_weight="1"
                 android:text="R$ 3,00"
                 android:textSize="20sp"
+                android:textColor="#000"
                 android:padding="8dp"
                 android:textAlignment="textEnd" />
         </LinearLayout>

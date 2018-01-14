@@ -34,6 +34,7 @@
                 android:layout_height="wrap_content"
                 android:text="Salada:"
                 android:textSize="20sp"
+                android:textColor="#000"
                 android:padding="8dp"
                 android:textAlignment="textStart" />
 
@@ -43,7 +44,8 @@
                 android:padding="8dp"
                 android:text="Repolo Verde\nManga\n Cenoura\n Salsa\n (Molho Tártaro)"
                 android:textAlignment="textEnd"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                android:textColor="#000"/>
         </LinearLayout>
 
         <LinearLayout
@@ -57,6 +59,7 @@
                 android:layout_height="wrap_content"
                 android:text="Prato Principal:"
                 android:textSize="20sp"
+                android:textColor="#000"
                 android:padding="8dp"
                 android:textAlignment="textStart" />
 
@@ -66,6 +69,7 @@
                 android:layout_height="wrap_content"
                 android:text="Fistada Mista"
                 android:textStyle="bold"
+                android:textColor="#000"
                 android:textSize="20sp"
                 android:padding="8dp"
                 android:textAlignment="textEnd" />
@@ -81,6 +85,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Guarniça:"
+                android:textColor="#000"
                 android:textSize="20sp"
                 android:padding="8dp"
                 android:textAlignment="textStart" />
@@ -89,6 +94,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Farofa"
+                android:textColor="#000"
                 android:textSize="20sp"
                 android:padding="8dp"
                 android:textAlignment="textEnd" />
@@ -104,6 +110,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Acompanhamento:"
+                android:textColor="#000"
                 android:textSize="20sp"
                 android:padding="8dp"
                 android:textAlignment="textStart" />
@@ -112,6 +119,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Arroz\nFeijão c/ Batata Doce"
+                android:textColor="#000"
                 android:textSize="20sp"
                 android:padding="8dp"
                 android:textAlignment="textEnd" />
@@ -127,6 +135,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Sobremesa:"
+                android:textColor="#000"
                 android:textSize="20sp"
                 android:padding="8dp"
                 android:textAlignment="textStart" />
@@ -135,6 +144,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Laranja"
+                android:textColor="#000"
                 android:textSize="20sp"
                 android:padding="8dp"
                 android:textAlignment="textEnd" />
@@ -150,6 +160,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Suco:"
+                android:textColor="#000"
                 android:textSize="20sp"
                 android:padding="8dp"
                 android:textAlignment="textStart" />
@@ -158,6 +169,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Suco de Fruta\n(Trazer Copo)"
+                android:textColor="#000"
                 android:textSize="20sp"
                 android:padding="8dp"
                 android:textAlignment="textEnd" />
@@ -183,6 +195,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Salada:"
+                android:textColor="#000"
                 android:textSize="20sp"
                 android:padding="8dp"
                 android:textAlignment="textStart" />
@@ -193,6 +206,7 @@
                 android:padding="8dp"
                 android:text="Repolo Verde\nManga\nCenoura\nSalsa\n(Molho Tártaro)"
                 android:textAlignment="textEnd"
+                android:textColor="#000"
                 android:textSize="20sp" />
         </LinearLayout>
 
@@ -206,6 +220,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Prato Principal:"
+                android:textColor="#000"
                 android:textSize="20sp"
                 android:padding="8dp"
                 android:textAlignment="textStart" />
@@ -214,7 +229,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Fistada Mista"
+                android:textStyle="bold"
                 android:textSize="20sp"
+                android:textColor="#000"
                 android:padding="8dp"
                 android:textAlignment="textEnd" />
         </LinearLayout>
@@ -230,6 +247,7 @@
                 android:layout_height="wrap_content"
                 android:text="Guarniça:"
                 android:textSize="20sp"
+                android:textColor="#000"
                 android:padding="8dp"
                 android:textAlignment="textStart" />
 
@@ -238,6 +256,7 @@
                 android:layout_height="wrap_content"
                 android:text="Farofa"
                 android:textSize="20sp"
+                android:textColor="#000"
                 android:padding="8dp"
                 android:textAlignment="textEnd" />
         </LinearLayout>
@@ -252,6 +271,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Acompanhamento:"
+                android:textColor="#000"
                 android:textSize="20sp"
                 android:padding="8dp"
                 android:textAlignment="textStart" />
@@ -260,6 +280,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Arroz\nFeijão c/ Batata Doce"
+                android:textColor="#000"
                 android:textSize="20sp"
                 android:padding="8dp"
                 android:textAlignment="textEnd" />
@@ -275,6 +296,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Sobremesa:"
+                android:textColor="#000"
                 android:textSize="20sp"
                 android:padding="8dp"
                 android:textAlignment="textStart" />
@@ -283,6 +305,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Laranja"
+                android:textColor="#000"
                 android:textSize="20sp"
                 android:padding="8dp"
                 android:textAlignment="textEnd" />
@@ -298,6 +321,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Suco:"
+                android:textColor="#000"
                 android:textSize="20sp"
                 android:padding="8dp"
                 android:textAlignment="textStart" />
@@ -306,6 +330,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Suco de Fruta\n(Trazer Copo)"
+                android:textColor="#000"
                 android:textSize="20sp"
                 android:padding="8dp"
                 android:textAlignment="textEnd" />

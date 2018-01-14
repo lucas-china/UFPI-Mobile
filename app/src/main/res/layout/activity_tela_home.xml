@@ -4,7 +4,7 @@
     android:id="@+id/telaHome"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#CFD8DC"
+    android:background="#fff"
     tools:context="ufpi.br.ufpimobile.TelaHome">
 
     <include
@@ -22,78 +22,79 @@
 
         <ImageButton
             android:id="@+id/im_noticias"
-            android:layout_width="110dp"
-            android:layout_height="122dp"
-            android:src="@mipmap/noticias2"
+            android:layout_width="105dp"
+            android:layout_height="105dp"
+            android:src="@mipmap/noticias4"
             android:background="@drawable/style_botton"/>
 
         <ImageButton
             android:id="@+id/im_evento"
-            android:layout_width="110dp"
-            android:layout_height="122dp"
-            android:src="@mipmap/eventos2"
+            android:layout_width="105dp"
+            android:layout_height="105dp"
+            android:src="@mipmap/eventos4"
             android:background="@drawable/style_botton"/>
 
         <ImageButton
             android:id="@+id/im_mapa"
-            android:layout_width="110dp"
-            android:layout_height="122dp"
-            android:src="@mipmap/mapa2"
+            android:layout_width="105dp"
+            android:layout_height="105dp"
+            android:src="@mipmap/mapa4"
             android:background="@drawable/style_botton"/>
 
         <ImageButton
             android:id="@+id/im_restaurante"
-            android:layout_width="110dp"
-            android:layout_height="122dp"
+            android:layout_width="105dp"
+            android:layout_height="105dp"
             android:layout_column="0"
             android:layout_row="1"
-            android:src="@mipmap/restaurante2"
+            android:src="@mipmap/restaurante4"
             android:background="@drawable/style_botton"/>
 
         <ImageButton
             android:id="@+id/im_contatos"
-            android:layout_width="110dp"
-            android:layout_height="122dp"
+            android:layout_width="105dp"
+            android:layout_height="105dp"
             android:layout_column="1"
             android:layout_row="1"
-            android:src="@mipmap/contatos2"
-            android:background="@drawable/style_botton"/>
+            android:src="@mipmap/contatos4"
+            android:background="@drawable/style_botton"
+            />
 
         <ImageButton
             android:id="@+id/im_calendario"
-            android:layout_width="110dp"
-            android:layout_height="122dp"
+            android:layout_width="105dp"
+            android:layout_height="105dp"
             android:layout_column="2"
             android:layout_row="1"
-            android:src="@mipmap/calendario2"
+            android:src="@mipmap/calendario4"
             android:background="@drawable/style_botton"/>
 
         <ImageButton
             android:id="@+id/im_sobre"
-            android:layout_width="110dp"
-            android:layout_height="122dp"
+            android:layout_width="105dp"
+            android:layout_height="105dp"
             android:layout_column="0"
             android:layout_row="2"
-            android:src="@mipmap/sobre2"
+            android:src="@mipmap/sobre4"
             android:background="@drawable/style_botton"/>
 
         <ImageButton
             android:id="@+id/im_radio"
-            android:layout_width="110dp"
-            android:layout_height="122dp"
+            android:layout_width="105dp"
+            android:layout_height="105dp"
             android:layout_column="1"
             android:layout_row="2"
-            android:src="@mipmap/radio2"
+            android:src="@mipmap/radio4"
             android:background="@drawable/style_botton"/>
 
 
         <ImageButton
             android:id="@+id/im_sigaa"
-            android:layout_width="110dp"
-            android:layout_height="122dp"
+            android:layout_width="105dp"
+            android:layout_height="105dp"
             android:layout_column="2"
             android:layout_row="2"
-            android:src="@mipmap/sigaa2"
+            android:src="@mipmap/sigaa4"
             android:background="@drawable/style_botton"/>
 
 

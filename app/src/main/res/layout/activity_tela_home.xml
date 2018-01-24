@@ -97,6 +97,15 @@
             android:src="@mipmap/sigaa4"
             android:background="@drawable/style_botton"/>
 
+        <ImageButton
+            android:id="@+id/im_manual"
+            android:layout_width="105dp"
+            android:layout_height="105dp"
+            android:layout_column="0"
+            android:layout_row="3"
+            android:src="@mipmap/manual4"
+            android:background="@drawable/style_botton"/>
+
 
     </GridLayout>
 

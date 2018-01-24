@@ -1,0 +1,17 @@
+<RelativeLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <include
+        android:id="@+id/toolbar_ManualCalouro"
+        layout="@layout/toolbar"/>
+
+    <com.github.barteksc.pdfviewer.PDFView
+        android:id="@+id/pdfView"
+        android:layout_below="@+id/toolbar_ManualCalouro"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+
+</RelativeLayout>

@@ -5,7 +5,6 @@
     <!-- Acesso a internet -->
     <uses-permission android:name="android.permission.INTERNET" />
 
-
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
          Google Maps Android API v2, but you must specify either coarse or fine
@@ -95,7 +94,8 @@
         <activity android:name=".ShowImages" />
         <activity android:name=".EscolherCalendario" />
         <activity android:name=".CalendarioCTT" />
-        <activity android:name=".CalendarioPos"></activity>
+        <activity android:name=".CalendarioPos" />
+        <activity android:name=".ManualCalouro"></activity>
     </application>
 
 </manifest>

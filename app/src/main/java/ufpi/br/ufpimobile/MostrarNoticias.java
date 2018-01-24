@@ -115,6 +115,7 @@ public class MostrarNoticias extends AppCompatActivity {
             public void onClick(View view, final int position) {
 
                 String href = noticiaList.get(position).getHref();
+                // String code = noticiaList.get(position).getCode();
                 String title = noticiaList.get(position).getTitulo();
                 Intent troca = new Intent(MostrarNoticias.this, NoticiaEspecificaActivity.class);
                 troca.putExtra("href", href);

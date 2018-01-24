@@ -1,15 +1,19 @@
 package ufpi.br.ufpimobile.model;
 
+import java.util.List;
+
 /**
  * Created by UFPI 236345 on 13/12/2017.
  */
 
 public class Noticia {
 
+    public String code;
     public String titulo;
     public String href;
     public String _data;
     public String hora;
+
 
     public Noticia(String titulo, String href, String _data, String hora){
         this.titulo = titulo;

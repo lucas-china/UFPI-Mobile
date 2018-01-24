@@ -61,6 +61,7 @@ public class NoticiaEspecificaActivity extends AppCompatActivity {
         Bundle bd = intent.getExtras();
         urls_img = new ArrayList<String>();
         href = (String) bd.get ("href");
+        // code = (String) bd.get("code"); ou seja, pegar o atributo code na activity anterior, pois o code é a chave que identifica uma notícia específica
         it_img = 0;
         body = (TextView) findViewById(R.id.body);
         title = (TextView) findViewById(R.id.titlene);

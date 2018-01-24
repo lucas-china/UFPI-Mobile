@@ -4,12 +4,15 @@ import android.content.Intent;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.os.AsyncTask;
+import android.os.PowerManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 
 import java.io.IOException;
 
@@ -17,16 +20,12 @@ public class Radio extends AppCompatActivity {
 
     private Button botaoPlay;
     private MediaPlayer mediaPlayer;
-    private String stream = "http://fm.ufpi.br:8000/admin";
+    private String stream = "http://108.61.20.171:10042/stream/;"; //"http://fm.ufpi.br:8000/admin"
     private boolean pausado = false;
     private boolean iniciado = false;
     private ImageView botao_play_stop;
     private boolean play = true;
 
-    @Override
-    /**
-     *
-     */
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_radio);
@@ -44,6 +43,7 @@ public class Radio extends AppCompatActivity {
                 startActivity(home);
             }
         });
+
 
         botaoPlay = (Button) findViewById(R.id.botaoPlayId);
         botaoPlay.setEnabled(false);
@@ -75,6 +75,7 @@ public class Radio extends AppCompatActivity {
 
 
     }
+
     private class PlayerTask extends AsyncTask<String, Void, Boolean> {
 
         @Override

@@ -49,7 +49,7 @@ public class CalendarioGrad extends AppCompatActivity {
 
     public RequestQueue queue;
     private List<CalendarioDAO> listCalendario;
-    String url = "https://ufpi-mobile-cm.herokuapp.com/api/calendars/5a4ba0252345bc00043e9b3a";
+    String url = "https://ufpi-mobile-cm.herokuapp.com/api/calendars/5a54e123dcb95d00049f3d9e?sort=-1";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -184,11 +184,15 @@ public class CalendarioGrad extends AppCompatActivity {
                 for (CalendarioDAO.EventsBean event : calen.getEvents()) {
 
                     if (event.getEndTime() != 0){
-                        eventos.add(new Event(Color.RED, event.getStartTime(), event.getTitle()));
-                        eventos.add(new Event(Color.RED, event.getEndTime(), event.getTitle()));
+
+                        for (long i = event.getStartTime(); i <= event.getEndTime();){
+                          eventos.add(new Event(Color.RED, i, event.getTitle()));
+                          i = i + 86400000;
+                        }
+
                     }
                     eventos.add(new Event(Color.BLUE, event.getStartTime(), event.getTitle()));
-                    //System.out.println("\n" + event.getTitle() + " --> " + event.getStartTime());
+                    
                 }
             }
 

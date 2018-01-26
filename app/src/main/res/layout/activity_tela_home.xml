@@ -70,12 +70,12 @@
             android:background="@drawable/style_botton"/>
 
         <ImageButton
-            android:id="@+id/im_sobre"
+            android:id="@+id/im_aceInf"
             android:layout_width="105dp"
             android:layout_height="105dp"
             android:layout_column="0"
             android:layout_row="2"
-            android:src="@mipmap/sobre4"
+            android:src="@mipmap/AceInf2"
             android:background="@drawable/style_botton"/>
 
         <ImageButton
@@ -103,7 +103,25 @@
             android:layout_height="105dp"
             android:layout_column="0"
             android:layout_row="3"
-            android:src="@mipmap/manual4"
+            android:src="@mipmap/GuiaEstudante2"
+            android:background="@drawable/style_botton"/>
+
+        <ImageButton
+            android:id="@+id/im_onibus"
+            android:layout_width="105dp"
+            android:layout_height="105dp"
+            android:layout_column="1"
+            android:layout_row="3"
+            android:src="@mipmap/onibus2"
+            android:background="@drawable/style_botton"/>
+
+        <ImageButton
+            android:id="@+id/im_ensino"
+            android:layout_width="105dp"
+            android:layout_height="105dp"
+            android:layout_column="2"
+            android:layout_row="3"
+            android:src="@mipmap/Ensino2"
             android:background="@drawable/style_botton"/>
 
 

@@ -99,7 +99,7 @@ public class Radio extends AppCompatActivity {
                     public void onCompletion(MediaPlayer mediaPlayer) {
                         initialStage = true;
                         playPause = false;
-                        btn.setText("PLAY");
+                        btn.setText("PLAY Streaming");
                         mediaPlayer.stop();
                         mediaPlayer.reset();
                     }

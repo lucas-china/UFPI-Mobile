@@ -50,9 +50,9 @@ public class TelaHome extends AppCompatActivity implements View.OnClickListener{
 
         this.mViewHolder.imageButton_restaurante.setOnClickListener(this);
 
-        this.mViewHolder.imageButton_sobre = findViewById(R.id.im_sobre);
+        this.mViewHolder.imageButton_inf = findViewById(R.id.im_inf);
 
-        this.mViewHolder.imageButton_sobre.setOnClickListener(this);
+        this.mViewHolder.imageButton_inf.setOnClickListener(this);
 
         this.mViewHolder.imageButton_evento = findViewById(R.id.im_evento);
 
@@ -90,8 +90,8 @@ public class TelaHome extends AppCompatActivity implements View.OnClickListener{
                 Intent intent0 = new Intent(getApplicationContext(), ContatoActivity.class);
                 startActivity(intent0);
                 break;
-            case R.id.im_sobre:
-                Intent intent1 = new Intent(getApplicationContext(), SobreNos.class);
+            case R.id.im_inf:
+                Intent intent1 = new Intent(getApplicationContext(), Informacao.class);
                 startActivity(intent1);
                 break;
             case R.id.im_radio:
@@ -137,7 +137,7 @@ public class TelaHome extends AppCompatActivity implements View.OnClickListener{
         ImageButton imageButton_calendario;
         ImageButton imageButton_sigaa;
         ImageButton imageButton_restaurante;
-        ImageButton imageButton_sobre;
+        ImageButton imageButton_inf;
         ImageButton imageButton_radio;
         ImageButton imageButton_noticia;
         ImageButton imageButton_evento;

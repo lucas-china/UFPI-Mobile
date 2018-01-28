@@ -49,7 +49,7 @@ public class CalendarioGrad extends AppCompatActivity {
 
     public RequestQueue queue;
     private List<CalendarioDAO> listCalendario;
-    String url = "https://ufpi-mobile-cm.herokuapp.com/api/calendars/5a54e123dcb95d00049f3d9e?sort=-1";
+    String url = "https://ufpi-mobile-cm.herokuapp.com/api/calendars/5a54e123dcb95d00049f3d9e?kind=grad";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -168,7 +168,7 @@ public class CalendarioGrad extends AppCompatActivity {
     private final Response.ErrorListener onPostsError = new Response.ErrorListener() {
         @Override
         public void onErrorResponse(VolleyError error) {
-            Log.e("CalendarioActivity", error.toString());
+            Log.e("CalendarioGRADActivity", error.toString());
         }
     };
 

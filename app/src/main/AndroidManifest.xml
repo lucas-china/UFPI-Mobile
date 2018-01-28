@@ -95,7 +95,10 @@
         <activity android:name=".EscolherCalendario" />
         <activity android:name=".CalendarioCTT" />
         <activity android:name=".CalendarioPos" />
-        <activity android:name=".ManualCalouro"></activity>
+        <activity android:name=".ManualCalouro" />
+        <activity android:name=".Informacao" />
+        <activity android:name=".SIC" />
+        <activity android:name=".DadosAbertos"></activity>
     </application>
 
 </manifest>

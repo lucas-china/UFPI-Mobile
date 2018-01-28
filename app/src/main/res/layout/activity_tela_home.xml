@@ -70,7 +70,7 @@
             android:background="@drawable/style_botton"/>
 
         <ImageButton
-            android:id="@+id/im_sobre"
+            android:id="@+id/im_inf"
             android:layout_width="105dp"
             android:layout_height="105dp"
             android:layout_column="0"

@@ -70,6 +70,10 @@ public class TelaHome extends AppCompatActivity implements View.OnClickListener{
 
         this.mViewHolder.imageButton_manual.setOnClickListener(this);
 
+        this.mViewHolder.imageButton_ensino = findViewById(R.id.im_ensino);
+
+        this.mViewHolder.imageButton_ensino.setOnClickListener(this);
+
 
     }
     /*
@@ -122,6 +126,10 @@ public class TelaHome extends AppCompatActivity implements View.OnClickListener{
                 Intent intent8 = new Intent(getApplicationContext(), ManualCalouro.class);
                 startActivity(intent8);
                 break;
+            case R.id.im_ensino:
+                Intent intent9 = new Intent(getApplicationContext(), Ensino.class);
+                startActivity(intent9);
+                break;
             default:
                 Intent intenterro = new Intent(getApplicationContext(), ErroActivity.class);
                 startActivity(intenterro);
@@ -143,6 +151,7 @@ public class TelaHome extends AppCompatActivity implements View.OnClickListener{
         ImageButton imageButton_evento;
         ImageButton imageButton_mapa;
         ImageButton imageButton_manual;
+        ImageButton imageButton_ensino;
 
     }
 }

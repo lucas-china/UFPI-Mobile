@@ -98,7 +98,12 @@
         <activity android:name=".ManualCalouro" />
         <activity android:name=".Informacao" />
         <activity android:name=".SIC" />
-        <activity android:name=".DadosAbertos"></activity>
+        <activity android:name=".DadosAbertos" />
+        <activity android:name=".Ensino" />
+        <activity android:name=".Tecnico" />
+        <activity android:name=".Graduacao" />
+        <activity android:name=".StrictoSensu" />
+        <activity android:name=".LatoSensu"></activity>
     </application>
 
 </manifest>

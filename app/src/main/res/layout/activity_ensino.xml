@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="ufpi.br.ufpimobile.Ensino">
+
+    <include
+        android:id="@+id/toolbar_Ensino"
+        layout="@layout/toolbar"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:paddingTop="16dp"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tec"
+            android:text="Técnico"
+            android:textColor="#fff"
+            android:background="@drawable/style_botton2"
+            android:textSize="16sp"
+            />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/grad"
+            android:text="Graduação"
+            android:background="@drawable/style_botton2"
+            android:textSize="16sp"
+            android:textColor="#fff"
+            android:layout_marginTop="30dp"
+            />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/stricto"
+            android:text="Pós-Graduação - Stricto Senso"
+            android:background="@drawable/style_botton2"
+            android:textSize="16sp"
+            android:textColor="#fff"
+            android:layout_marginTop="30dp"
+            />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/lato"
+            android:text="Pós-Graduação - Lato senso"
+            android:background="@drawable/style_botton2"
+            android:textSize="16sp"
+            android:textColor="#fff"
+            android:layout_marginTop="30dp"
+            />
+
+
+
+    </LinearLayout>
+
+</LinearLayout>
+
+
+
+
+

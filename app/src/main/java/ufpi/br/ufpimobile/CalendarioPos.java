@@ -1,6 +1,7 @@
 package ufpi.br.ufpimobile;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -10,11 +11,18 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 
+import com.android.volley.Request;
 import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.github.sundeepk.compactcalendarview.CompactCalendarView;
 import com.github.sundeepk.compactcalendarview.domain.Event;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
+import java.lang.reflect.Type;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -36,6 +44,7 @@ public class CalendarioPos extends AppCompatActivity {
 
     public RequestQueue queue;
     private List<CalendarioDAO> listCalendario;
+    String url = "https://ufpi-mobile-cm.herokuapp.com/api/calendars/5a54e123dcb95d00049f3d9e?kind=pos";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,7 +80,7 @@ public class CalendarioPos extends AppCompatActivity {
         });
 
         queue = Volley.newRequestQueue(this);
-        //fetchPosts();
+        fetchPosts();
 
 
         // Definir o título na rolagem do calendário
@@ -130,5 +139,60 @@ public class CalendarioPos extends AppCompatActivity {
                 }
             }
         };
+    }
+
+    private void fetchPosts() {
+        StringRequest request = new StringRequest(Request.Method.GET, url, onPostLoaded, onPostsError);
+        queue.add(request);
+    }
+
+    private final Response.Listener<String> onPostLoaded = new Response.Listener<String>() {
+        @Override
+        public void onResponse(String response) {
+            Type listType = new TypeToken<ArrayList<CalendarioDAO>>() {
+            }.getType();
+            listCalendario = new Gson().fromJson(response, listType);
+
+            adicionarDatas();
+        }
+
+    };
+
+    private final Response.ErrorListener onPostsError = new Response.ErrorListener() {
+        @Override
+        public void onErrorResponse(VolleyError error) {
+            Log.e("CalendarioPosActivity", error.toString());
+        }
+    };
+
+    public void adicionarDatas() {
+
+        List<Event> eventos = new ArrayList<>();
+
+
+        if (listCalendario == null) {
+            System.out.println("Lista Nulla!!");
+        } else {
+            for (CalendarioDAO calen : listCalendario) {
+                for (CalendarioDAO.EventsBean event : calen.getEvents()) {
+
+                    if (event.getEndTime() != 0){
+
+                        for (long i = event.getStartTime(); i <= event.getEndTime();){
+                            eventos.add(new Event(Color.RED, i, event.getTitle()));
+                            i = i + 86400000;
+                        }
+
+                    }
+                    eventos.add(new Event(Color.BLUE, event.getStartTime(), event.getTitle()));
+
+                }
+            }
+
+            compactCalendarView.addEvents(eventos);
+
+        }
+
+
     }
 }

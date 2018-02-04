@@ -176,7 +176,7 @@ public class MapsInicio extends AppCompatActivity
 
         switch (id){
             case R.id.nav_home:
-                Intent intent = new Intent(getApplicationContext(), TelaHome.class);
+                Intent intent = new Intent(getApplicationContext(), TelaHome2.class);
                 startActivity(intent);
             break;
             case R.id.nav_auditorio:

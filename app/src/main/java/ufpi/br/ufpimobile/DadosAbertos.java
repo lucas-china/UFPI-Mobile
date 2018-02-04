@@ -11,6 +11,9 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ProgressBar;
+import android.widget.Toast;
+
+import ufpi.br.ufpimobile.controllers.TestConnection;
 
 public class DadosAbertos extends AppCompatActivity {
 
@@ -42,12 +45,19 @@ public class DadosAbertos extends AppCompatActivity {
         dadosAbertos = (WebView) findViewById(R.id.activity_main_webview);
         progressBar = (ProgressBar) findViewById(R.id.progressBar1);
 
-        WebSettings webSettings = dadosAbertos.getSettings();
-        webSettings.setJavaScriptEnabled(true);
-        webSettings.setDisplayZoomControls(true);
-        webSettings.setSupportZoom(true);
-        dadosAbertos.loadUrl(url);
-        dadosAbertos.setWebViewClient(new DadosAbertos.HelloWebViewClient());
+        if (new TestConnection(getApplicationContext()).isConnected()) {
+
+            WebSettings webSettings = dadosAbertos.getSettings();
+            webSettings.setJavaScriptEnabled(true);
+            webSettings.setDisplayZoomControls(true);
+            webSettings.setSupportZoom(true);
+            dadosAbertos.loadUrl(url);
+            dadosAbertos.setWebViewClient(new DadosAbertos.HelloWebViewClient());
+        }
+        else {
+            Toast toast = Toast.makeText(getApplicationContext(), "Sem acesso a Internet!!", Toast.LENGTH_LONG);
+            toast.show();
+        }
     }
 
     private class HelloWebViewClient extends WebViewClient {

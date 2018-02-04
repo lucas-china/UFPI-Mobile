@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -30,6 +31,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
+import ufpi.br.ufpimobile.controllers.TestConnection;
 import ufpi.br.ufpimobile.model.CalendarioDAO;
 
 public class CalendarioPos extends AppCompatActivity {
@@ -79,8 +81,15 @@ public class CalendarioPos extends AppCompatActivity {
             }
         });
 
-        queue = Volley.newRequestQueue(this);
-        fetchPosts();
+        if (new TestConnection(getApplicationContext()).isConnected()) {
+            queue = Volley.newRequestQueue(this);
+            fetchPosts();
+        }
+        else {
+            Toast toast = Toast.makeText(getApplicationContext(), "Sem acesso a Internet!!", Toast.LENGTH_LONG);
+            toast.show();
+
+        }
 
 
         // Definir o título na rolagem do calendário
@@ -178,11 +187,11 @@ public class CalendarioPos extends AppCompatActivity {
 
                     if (event.getEndTime() != 0){
 
-                        for (long i = event.getStartTime(); i <= event.getEndTime();){
-                            eventos.add(new Event(Color.RED, i, event.getTitle()));
-                            i = i + 86400000;
-                        }
+                        for (long i = event.getStartTime() + 86400000; i <= event.getEndTime(); i = i + 86400000){
 
+                            eventos.add(new Event(Color.RED, i, event.getTitle()));
+
+                        }
                     }
                     eventos.add(new Event(Color.BLUE, event.getStartTime(), event.getTitle()));
 

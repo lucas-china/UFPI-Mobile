@@ -14,8 +14,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.Toast;
+
+import com.android.volley.toolbox.Volley;
 
 import java.io.IOException;
+
+import ufpi.br.ufpimobile.controllers.TestConnection;
 
 public class Radio extends AppCompatActivity {
 
@@ -37,7 +42,7 @@ public class Radio extends AppCompatActivity {
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent home = new Intent(getApplicationContext(), TelaHome.class);
+                Intent home = new Intent(getApplicationContext(), TelaHome2.class);
                 finish();
                 startActivity(home);
             }
@@ -45,35 +50,43 @@ public class Radio extends AppCompatActivity {
 
 
         btn = (Button) findViewById(R.id.botaoPlayId);
-        mediaPlayer = new MediaPlayer();
-        mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
-        progressDialog = new ProgressDialog(this);
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (!playPause) {
-                    btn.setText("Pause Streaming");
 
-                    if (initialStage) {
-                        new Player().execute("http://fm.ufpi.br:8000/admin");
+        if (new TestConnection(getApplicationContext()).isConnected()) {
+            mediaPlayer = new MediaPlayer();
+            mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
+            progressDialog = new ProgressDialog(this);
+            btn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (!playPause) {
+                        btn.setText("Pause Streaming");
+
+                        if (initialStage) {
+                            new Player().execute("http://fm.ufpi.br:8000/admin");
+                        } else {
+                            if (!mediaPlayer.isPlaying())
+                                mediaPlayer.start();
+                        }
+
+                        playPause = true;
+
                     } else {
-                        if (!mediaPlayer.isPlaying())
-                            mediaPlayer.start();
+                        btn.setText("Play Streaming");
+
+                        if (mediaPlayer.isPlaying()) {
+                            mediaPlayer.pause();
+                        }
+
+                        playPause = false;
                     }
-
-                    playPause = true;
-
-                } else {
-                    btn.setText("Play Streaming");
-
-                    if (mediaPlayer.isPlaying()) {
-                        mediaPlayer.pause();
-                    }
-
-                    playPause = false;
                 }
-            }
-        });
+            });
+        }
+        else {
+            Toast toast = Toast.makeText(getApplicationContext(), "Sem acesso a Internet!!", Toast.LENGTH_LONG);
+            toast.show();
+        }
+
     }
 
     @Override

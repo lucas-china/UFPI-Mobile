@@ -22,7 +22,7 @@ public class EscolherCalendario extends AppCompatActivity {
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent home = new Intent(getApplicationContext(), TelaHome.class);
+                Intent home = new Intent(getApplicationContext(), TelaHome2.class);
                 finish();
                 startActivity(home);
             }

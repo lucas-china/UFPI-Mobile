@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="ufpi.br.ufpimobile.TelaHome2"
+    tools:showIn="@layout/app_bar_tela_home2">
+
+    <RelativeLayout
+        android:id="@+id/telaHome2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <GridLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:useDefaultMargins="true">
+
+
+            <ImageButton
+                android:id="@+id/im_noticias"
+                android:layout_width="105dp"
+                android:layout_height="105dp"
+                android:src="@mipmap/noticias4"
+                android:background="@drawable/style_botton"/>
+
+            <ImageButton
+                android:id="@+id/im_evento"
+                android:layout_width="105dp"
+                android:layout_height="105dp"
+                android:src="@mipmap/eventos4"
+                android:background="@drawable/style_botton"/>
+
+            <ImageButton
+                android:id="@+id/im_mapa"
+                android:layout_width="105dp"
+                android:layout_height="105dp"
+                android:src="@mipmap/mapa4"
+                android:background="@drawable/style_botton"/>
+
+            <ImageButton
+                android:id="@+id/im_restaurante"
+                android:layout_width="105dp"
+                android:layout_height="105dp"
+                android:layout_column="0"
+                android:layout_row="1"
+                android:src="@mipmap/restaurante4"
+                android:background="@drawable/style_botton"/>
+
+            <ImageButton
+                android:id="@+id/im_contatos"
+                android:layout_width="105dp"
+                android:layout_height="105dp"
+                android:layout_column="1"
+                android:layout_row="1"
+                android:src="@mipmap/contatos4"
+                android:background="@drawable/style_botton"
+                />
+
+            <ImageButton
+                android:id="@+id/im_calendario"
+                android:layout_width="105dp"
+                android:layout_height="105dp"
+                android:layout_column="2"
+                android:layout_row="1"
+                android:src="@mipmap/calendario4"
+                android:background="@drawable/style_botton"/>
+
+            <ImageButton
+                android:id="@+id/im_inf"
+                android:layout_width="105dp"
+                android:layout_height="105dp"
+                android:layout_column="0"
+                android:layout_row="2"
+                android:src="@mipmap/aceinf34"
+                android:background="@drawable/style_botton"/>
+
+            <ImageButton
+                android:id="@+id/im_radio"
+                android:layout_width="105dp"
+                android:layout_height="105dp"
+                android:layout_column="1"
+                android:layout_row="2"
+                android:src="@mipmap/radio4"
+                android:background="@drawable/style_botton"/>
+
+
+            <ImageButton
+                android:id="@+id/im_sigaa"
+                android:layout_width="105dp"
+                android:layout_height="105dp"
+                android:layout_column="2"
+                android:layout_row="2"
+                android:src="@mipmap/sigaa4"
+                android:background="@drawable/style_botton"/>
+
+            <ImageButton
+                android:id="@+id/im_manual"
+                android:layout_width="105dp"
+                android:layout_height="105dp"
+                android:layout_column="0"
+                android:layout_row="3"
+                android:src="@mipmap/guia"
+                android:background="@drawable/style_botton"/>
+
+            <ImageButton
+                android:id="@+id/im_onibus"
+                android:layout_width="105dp"
+                android:layout_height="105dp"
+                android:layout_column="1"
+                android:layout_row="3"
+                android:src="@mipmap/onibus1"
+                android:background="@drawable/style_botton"/>
+
+            <ImageButton
+                android:id="@+id/im_ensino"
+                android:layout_width="105dp"
+                android:layout_height="105dp"
+                android:layout_column="2"
+                android:layout_row="3"
+                android:src="@mipmap/ensino1"
+                android:background="@drawable/style_botton"/>
+
+
+        </GridLayout>
+
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>

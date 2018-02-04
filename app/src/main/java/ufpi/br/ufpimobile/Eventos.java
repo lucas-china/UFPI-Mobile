@@ -7,6 +7,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -23,6 +24,7 @@ import java.util.List;
 
 import ufpi.br.ufpimobile.adapter.EventoAdapter;
 import ufpi.br.ufpimobile.adapter.NoticiaAdapter;
+import ufpi.br.ufpimobile.controllers.TestConnection;
 import ufpi.br.ufpimobile.model.Evento;
 import ufpi.br.ufpimobile.model.Noticia;
 
@@ -48,7 +50,7 @@ public class Eventos extends AppCompatActivity {
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent home = new Intent(getApplicationContext(), TelaHome.class);
+                Intent home = new Intent(getApplicationContext(), TelaHome2.class);
                 finish();
                 startActivity(home);
             }
@@ -61,31 +63,36 @@ public class Eventos extends AppCompatActivity {
         mLayoutManager = new LinearLayoutManager(this,LinearLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(mLayoutManager);
 
+        if (new TestConnection(getApplicationContext()).isConnected()) {
+            queue = Volley.newRequestQueue(this);
 
-        queue = Volley.newRequestQueue(this);
 
-
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        // Display the first 500 characters of the response string.
+            StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
+                    new Response.Listener<String>() {
+                        @Override
+                        public void onResponse(String response) {
+                            // Display the first 500 characters of the response string.
 //                        noticia.setText("Response is: "+ response.toString());
-                        Type listType = new TypeToken<ArrayList<Evento>>() {
-                        }.getType();
-                        listaEvents = new Gson().fromJson(response, listType);
+                            Type listType = new TypeToken<ArrayList<Evento>>() {
+                            }.getType();
+                            listaEvents = new Gson().fromJson(response, listType);
 
-                        mAdapter = new EventoAdapter(listaEvents,getApplicationContext());
-                        recyclerView.setAdapter(mAdapter);
-                    }
-                }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
+                            mAdapter = new EventoAdapter(listaEvents, getApplicationContext());
+                            recyclerView.setAdapter(mAdapter);
+                        }
+                    }, new Response.ErrorListener() {
+                @Override
+                public void onErrorResponse(VolleyError error) {
 //                noticia.setText("That didn't work!");
-                System.out.println("Deu merda no volley do Eventos");
-            }
-        });
-        queue.add(stringRequest);
+                    System.out.println("Deu merda no volley do Eventos");
+                }
+            });
+            queue.add(stringRequest);
+        }
+        else {
+            Toast toast = Toast.makeText(getApplicationContext(), "Sem acesso a Internet!!", Toast.LENGTH_LONG);
+            toast.show();
+        }
 
     }
 

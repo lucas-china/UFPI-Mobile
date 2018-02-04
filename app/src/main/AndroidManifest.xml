@@ -103,7 +103,11 @@
         <activity android:name=".Tecnico" />
         <activity android:name=".Graduacao" />
         <activity android:name=".StrictoSensu" />
-        <activity android:name=".LatoSensu"></activity>
+        <activity android:name=".LatoSensu" />
+        <activity
+            android:name=".TelaHome2"
+            android:label="@string/title_activity_tela_home2"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>

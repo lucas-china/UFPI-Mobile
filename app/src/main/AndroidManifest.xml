@@ -47,6 +47,7 @@
         <activity
             android:name=".Radio"
             android:label="@string/title_activity_radio"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
         <activity
             android:name=".Sigaa"
@@ -107,7 +108,7 @@
         <activity
             android:name=".TelaHome2"
             android:label="@string/title_activity_tela_home2"
-            android:theme="@style/AppTheme"></activity>
+            android:theme="@style/AppTheme" />
     </application>
 
 </manifest>

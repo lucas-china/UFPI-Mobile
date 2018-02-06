@@ -11,6 +11,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -86,7 +87,7 @@ public class MostrarNoticias extends AppCompatActivity {
 
         //String url = "https://ufpi-mobile-cm.herokuapp.com/api/articles";
 
-        String url = "http://192.168.0.110:8000/noticias";
+        String url = "https://ufpi-mobile-cm.herokuapp.com/api/articles";
 
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
                 new Response.Listener<String>() {
@@ -114,13 +115,23 @@ public class MostrarNoticias extends AppCompatActivity {
             @Override
             public void onClick(View view, final int position) {
 
-                String href = noticiaList.get(position).getHref();
+                Toast toast = Toast.makeText(getApplicationContext(),"A noticia completa ainda está sendo feita!!", Toast.LENGTH_LONG);
+                toast.show();
+
+                int code = noticiaList.get(position).getCode();
+
+                Intent troca = new Intent(MostrarNoticias.this, NoticiaEspecificaActivity.class);
+                troca.putExtra("code", code);
+
+                MostrarNoticias.this.startActivity(troca);
+
+                /*String href = noticiaList.get(position).getHref();
                 // String code = noticiaList.get(position).getCode();
                 String title = noticiaList.get(position).getTitulo();
                 Intent troca = new Intent(MostrarNoticias.this, NoticiaEspecificaActivity.class);
                 troca.putExtra("href", href);
                 troca.putExtra("title", title);
-                MostrarNoticias.this.startActivity(troca);
+                MostrarNoticias.this.startActivity(troca);*/
 
             }
 

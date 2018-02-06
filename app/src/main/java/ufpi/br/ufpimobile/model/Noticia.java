@@ -1,25 +1,42 @@
 package ufpi.br.ufpimobile.model;
 
-import java.util.List;
-
 /**
  * Created by UFPI 236345 on 13/12/2017.
  */
 
 public class Noticia {
 
-    public String code;
-    public String titulo;
-    public String href;
-    public String _data;
-    public String hora;
 
+    /**
+     * code : 21842
+     * createdAt : 2018-02-05T17:59:00.000Z
+     * titulo : PPGMAT: retificação do edital de seleção
+     * href : http://ufpi.br/ultimas-noticias-ufpi/21842-ppgmat-retificacao-do-edital-de-selecao
+     * _data : 05/02/2018
+     * hora : 14:59
+     */
 
-    public Noticia(String titulo, String href, String _data, String hora){
-        this.titulo = titulo;
-        this.href = href;
-        this._data = _data;
-        this.hora = hora;
+    private int code;
+    private String createdAt;
+    private String titulo;
+    private String href;
+    private String _data;
+    private String hora;
+
+    public int getCode() {
+        return code;
+    }
+
+    public void setCode(int code) {
+        this.code = code;
+    }
+
+    public String getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(String createdAt) {
+        this.createdAt = createdAt;
     }
 
     public String getTitulo() {

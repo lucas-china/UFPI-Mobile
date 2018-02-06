@@ -1,33 +1,58 @@
 package ufpi.br.ufpimobile.model;
 
+import java.util.List;
+
 /**
  * Created by UFPI 236345 on 13/12/2017.
  */
 
 public class NoticiaEspecifica {
 
-    public String text;
-    public String href;
-    public String img;
-    public Boolean link;
-    public Boolean eimg;
-    public Boolean etext;
 
-    public NoticiaEspecifica(String texto, String href, String img, Boolean link, Boolean eimg, Boolean etext) {
-        this.text = texto;
-        this.href = href;
-        this.img = img;
-        this.link = link;
-        this.eimg = eimg;
-        this.etext = etext;
+    /**
+     * text : ["A Universidade Federal do Piauí (UFPI), por meio da Pró-Reitoria de Ensino de Pós-Graduação, torna pública a retificação do edital de abertura de vagas para o processo seletivo para o Programa de Pós-Graduação em Matemática/PPGMAT.","Confira aqui."]
+     * images : []
+     * links : ["http://ufpi.br/arquivos_download/arquivos/SCS/retificacao_edital_ppgmat.pdf"]
+     * code : 21842
+     * createdAt : 2018-02-05T17:59:00.000Z
+     * titulo : PPGMAT: retificação do edital de seleção
+     * href : http://ufpi.br/ultimas-noticias-ufpi/21842-ppgmat-retificacao-do-edital-de-selecao
+     * _data : 05/02/2018
+     * hora : 14:59
+     */
+
+    private int code;
+    private String createdAt;
+    private String titulo;
+    private String href;
+    private String _data;
+    private String hora;
+    private List<String> text;
+    private List<?> images;
+    private List<String> links;
+
+    public int getCode() {
+        return code;
     }
 
-    public String getTexto() {
-        return text;
+    public void setCode(int code) {
+        this.code = code;
     }
 
-    public void setTexto(String texto) {
-        this.text = texto;
+    public String getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(String createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
     }
 
     public String getHref() {
@@ -38,35 +63,43 @@ public class NoticiaEspecifica {
         this.href = href;
     }
 
-    public String getImg() {
-        return img;
+    public String get_data() {
+        return _data;
     }
 
-    public void setImg(String img) {
-        this.img = img;
+    public void set_data(String _data) {
+        this._data = _data;
     }
 
-    public Boolean getLink() {
-        return link;
+    public String getHora() {
+        return hora;
     }
 
-    public void setLink(Boolean link) {
-        this.link = link;
+    public void setHora(String hora) {
+        this.hora = hora;
     }
 
-    public Boolean getEimg() {
-        return eimg;
+    public List<String> getText() {
+        return text;
     }
 
-    public void setEimg(Boolean eimg) {
-        this.eimg = eimg;
+    public void setText(List<String> text) {
+        this.text = text;
     }
 
-    public Boolean getEtext() {
-        return etext;
+    public List<?> getImages() {
+        return images;
     }
 
-    public void setEtext(Boolean etext) {
-        this.etext = etext;
+    public void setImages(List<?> images) {
+        this.images = images;
+    }
+
+    public List<String> getLinks() {
+        return links;
+    }
+
+    public void setLinks(List<String> links) {
+        this.links = links;
     }
 }

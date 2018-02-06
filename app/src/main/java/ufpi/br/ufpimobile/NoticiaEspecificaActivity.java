@@ -18,12 +18,17 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.gson.Gson;
+import com.google.gson.JsonObject;
 import com.google.gson.reflect.TypeToken;
 import com.squareup.picasso.Picasso;
 
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import ufpi.br.ufpimobile.adapter.*;
 
@@ -40,7 +45,7 @@ public class NoticiaEspecificaActivity extends AppCompatActivity {
 
     public RequestQueue queue;
     private String href;
-    private List<NoticiaEspecifica> noticiaEspecificaList;
+    private NoticiaEspecifica noticiaEspecifica;
     private ArrayList<String> urls_img;
     private TextView body;
     private TextView title;
@@ -57,17 +62,20 @@ public class NoticiaEspecificaActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_noticia_especifica);
+
         Intent intent = getIntent();
         Bundle bd = intent.getExtras();
+
         urls_img = new ArrayList<String>();
-        href = (String) bd.get ("href");
-        // code = (String) bd.get("code"); ou seja, pegar o atributo code na activity anterior, pois o code é a chave que identifica uma notícia específica
+        //href = (String) bd.get ("href");
+        int code = (Integer) bd.get("code"); // ou seja, pegar o atributo code na activity anterior, pois o code é a chave que identifica uma notícia específica
+
         it_img = 0;
         body = (TextView) findViewById(R.id.body);
         title = (TextView) findViewById(R.id.titlene);
         img_id = (ImageView) findViewById(R.id.img_id);
         prox = (Button) findViewById(R.id.Prox);
-        prox_view = findViewById(R.id.Prox);
+        //prox_view = findViewById(R.id.Prox);
         layout = (LinearLayout) findViewById(R.id.layout);
         //linkAdapter
 
@@ -77,9 +85,9 @@ public class NoticiaEspecificaActivity extends AppCompatActivity {
 //        mRecyclerView.setLayoutManager(mLayoutManager);
 
         //img_id.setImageBitmap(bmp);
-        prox_view.setVisibility(View.GONE);
-        title.setText((String) bd.get ("title"));
-        queue = Volley.newRequestQueue(this);
+        //prox_view.setVisibility(View.GONE);
+        //title.setText((String) bd.get ("title"));
+        //queue = Volley.newRequestQueue(this);
 
 
 
@@ -99,57 +107,58 @@ public class NoticiaEspecificaActivity extends AppCompatActivity {
 
 
 
-        String url ="http://192.168.0.110:8000/noticiaespecifica";
+        //String url ="http://192.168.0.110:8000/noticiaespecifica";
         // to -  do
-        //"https://ufpi-mobile-cm.herokuapp.com/api/articles"
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        Type listType = new TypeToken<ArrayList<NoticiaEspecifica>>(){}.getType();
-                        noticiaEspecificaList = new Gson().fromJson(response.toString(), listType);
-                        noticiaProcess();
-                        getImages();
+        String url = "https://ufpi-mobile-cm.herokuapp.com/api/articles/" + code;
 
+        JsonObjectRequest jsonObjectRequest =
+                new JsonObjectRequest(
+                        Request.Method.GET,
+                        url, null,
+                        new Response.Listener<JSONObject>() {
+                            @Override
+                            public void onResponse(JSONObject response) {
 
-                        //if(urls_img.size() == 0){
-                        //}else{
-                        //   Picasso.with(NoticiaEspecificaActivity.this).load("http://ufpi.br"+urls_img.get(0)).into(img_id);
-                        // }
-                    }
-                }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                //body.setText("That didn't work!");
-            }
-        }){
+                                try {
+                                    String titulo = response.getString("titulo");
+                                    String corppo = response.getString("text");
 
-            @Override
-            protected Map<String, String> getParams()
-            {
-                Map<String, String> params = new HashMap<String, String>();
-                params.put("data", href);
-                return params;
-            }
+                                    title.setText(titulo);
+                                    body.setText(corppo);
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
+                                    title.setText("Impossível colocar o Titulo");
+                                    body.setText("Impossível colocar o Corpo");
+                                }
 
-        };
-        queue.add(stringRequest);
+                            }
+                    }, new Response.ErrorListener() {
+                        @Override
+                        public void onErrorResponse(VolleyError error) {
+                            title.setText("Impossível colocar o Titulo");
+                            body.setText("Impossível colocar o Corpo");
+                        }
+                }
+                );
 
-        prox.setOnClickListener(new View.OnClickListener() {
+        RequestQueue fila = Volley.newRequestQueue(this);
+        fila.add(jsonObjectRequest);
+
+        /*prox.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 it_img++;
                 Integer pos = it_img%urls_img.size();
                 Picasso.with(NoticiaEspecificaActivity.this).load("http://ufpi.br"+urls_img.get(pos)).into(img_id);
             }
-        });
+        });*/
     }
 
-    void noticiaProcess(){
-        System.out.println(noticiaEspecificaList.toString());
+    /*void noticiaProcess(){
+        //System.out.println(noticiaEspecificaList.toString());
         List<String> links_list = new ArrayList<String>();
         String text = "";
-        for(NoticiaEspecifica ne: noticiaEspecificaList){
+        for(NoticiaEspecifca ne: noticiaEspecificaList){
             if(ne.etext){
                 text = text + ne.text +'\n'+'\n';
             }
@@ -163,9 +172,9 @@ public class NoticiaEspecificaActivity extends AppCompatActivity {
         body.setClickable(true);
         body.setMovementMethod(LinkMovementMethod.getInstance());
         body.setText(Html.fromHtml(text));
-    }
+    }*/
 
-    void getImages(){
+    /*void getImages(){
         for(NoticiaEspecifica ne: noticiaEspecificaList){
             if(ne.eimg){
                 urls_img.add(ne.getImg());
@@ -178,10 +187,10 @@ public class NoticiaEspecificaActivity extends AppCompatActivity {
             Picasso.with(NoticiaEspecificaActivity.this).load("http://ufpi.br"+urls_img.get(0)).into(img_id);
         }
 
-    }
+    }*/
 
 
-    }
+}
 
 
 

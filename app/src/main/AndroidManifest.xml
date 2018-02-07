@@ -109,6 +109,10 @@
             android:name=".TelaHome2"
             android:label="@string/title_activity_tela_home2"
             android:theme="@style/AppTheme" />
+        <activity
+            android:name=".Onibus"
+            android:label="@string/title_activity_onibus"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>

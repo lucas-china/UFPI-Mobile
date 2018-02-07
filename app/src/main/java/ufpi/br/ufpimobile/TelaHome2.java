@@ -84,6 +84,10 @@ public class TelaHome2 extends AppCompatActivity
         this.mViewHolder.imageButton_ensino = findViewById(R.id.im_ensino);
 
         this.mViewHolder.imageButton_ensino.setOnClickListener(this);
+
+        this.mViewHolder.imageButton_onibus = findViewById(R.id.im_onibus);
+
+        this.mViewHolder.imageButton_onibus.setOnClickListener(this);
     }
 
     @Override
@@ -112,6 +116,7 @@ public class TelaHome2 extends AppCompatActivity
         ImageButton imageButton_mapa;
         ImageButton imageButton_manual;
         ImageButton imageButton_ensino;
+        ImageButton imageButton_onibus;
 
     }
 
@@ -164,6 +169,10 @@ public class TelaHome2 extends AppCompatActivity
             case R.id.im_ensino:
                 Intent intent9 = new Intent(getApplicationContext(), Ensino.class);
                 startActivity(intent9);
+                break;
+            case R.id.im_onibus:
+                Intent intent10 = new Intent(getApplicationContext(), Onibus.class);
+                startActivity(intent10);
                 break;
             default:
                 Intent intenterro = new Intent(getApplicationContext(), ErroActivity.class);

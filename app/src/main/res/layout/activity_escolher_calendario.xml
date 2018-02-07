@@ -51,6 +51,39 @@
             android:layout_marginTop="30dp"
             />
 
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/ead"
+            android:text="Educação a Distância (EaD)"
+            android:background="@drawable/style_botton2"
+            android:textSize="16sp"
+            android:textColor="#fff"
+            android:layout_marginTop="30dp"
+            />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/ledoc"
+            android:text="Curso de Licenciatura em Educação do Campo (LEDOC)"
+            android:background="@drawable/style_botton2"
+            android:textSize="16sp"
+            android:textColor="#fff"
+            android:layout_marginTop="30dp"
+            />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/parfor"
+            android:text="Plano Nacional de Formação e Professores da Educação Básica (PARFOR)"
+            android:background="@drawable/style_botton2"
+            android:textSize="16sp"
+            android:textColor="#fff"
+            android:layout_marginTop="30dp"
+            />
+
     </LinearLayout>
 
 </LinearLayout>

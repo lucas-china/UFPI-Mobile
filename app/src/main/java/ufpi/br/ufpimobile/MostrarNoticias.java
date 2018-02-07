@@ -105,7 +105,7 @@ public class MostrarNoticias extends AppCompatActivity {
                 }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                noticia.setText("That didn't work!");
+                //noticia.setText("That didn't work!");
             }
         });
         queue.add(stringRequest);

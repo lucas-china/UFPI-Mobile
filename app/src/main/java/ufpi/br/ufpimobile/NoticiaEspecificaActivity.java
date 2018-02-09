@@ -8,6 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.text.Html;
 import android.text.method.LinkMovementMethod;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -75,7 +76,7 @@ public class NoticiaEspecificaActivity extends AppCompatActivity {
         title = (TextView) findViewById(R.id.titlene);
         img_id = (ImageView) findViewById(R.id.img_id);
         prox = (Button) findViewById(R.id.Prox);
-        //prox_view = findViewById(R.id.Prox);
+        prox_view = findViewById(R.id.Prox);
         layout = (LinearLayout) findViewById(R.id.layout);
         //linkAdapter
 
@@ -85,7 +86,7 @@ public class NoticiaEspecificaActivity extends AppCompatActivity {
 //        mRecyclerView.setLayoutManager(mLayoutManager);
 
         //img_id.setImageBitmap(bmp);
-        //prox_view.setVisibility(View.GONE);
+        prox_view.setVisibility(View.GONE);
         //title.setText((String) bd.get ("title"));
         //queue = Volley.newRequestQueue(this);
 
@@ -119,17 +120,15 @@ public class NoticiaEspecificaActivity extends AppCompatActivity {
                             @Override
                             public void onResponse(JSONObject response) {
 
-                                try {
-                                    String titulo = response.getString("titulo");
-                                    String corppo = response.getString("text");
+                                //String titulo = response.getString("titulo");
+                                //String corppo = response.getString("text");
+                                Gson gson = new Gson();
+                                NoticiaEspecifica not = gson.fromJson(String.valueOf(response),NoticiaEspecifica.class);
 
-                                    title.setText(titulo);
-                                    body.setText(corppo);
-                                } catch (JSONException e) {
-                                    e.printStackTrace();
-                                    title.setText("Impossível colocar o Titulo");
-                                    body.setText("Impossível colocar o Corpo");
-                                }
+                                //title.setText(not.getTitulo());
+                                //body.setText(not.getText().toString());
+                                noticiaProcess(not);
+                                getImages(not);
 
                             }
                     }, new Response.ErrorListener() {
@@ -144,50 +143,46 @@ public class NoticiaEspecificaActivity extends AppCompatActivity {
         RequestQueue fila = Volley.newRequestQueue(this);
         fila.add(jsonObjectRequest);
 
-        /*prox.setOnClickListener(new View.OnClickListener() {
+        prox.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 it_img++;
                 Integer pos = it_img%urls_img.size();
-                Picasso.with(NoticiaEspecificaActivity.this).load("http://ufpi.br"+urls_img.get(pos)).into(img_id);
+                Picasso.with(NoticiaEspecificaActivity.this).load(urls_img.get(pos)).into(img_id);
             }
-        });*/
+        });
     }
 
-    /*void noticiaProcess(){
+    void noticiaProcess(NoticiaEspecifica not){
         //System.out.println(noticiaEspecificaList.toString());
-        List<String> links_list = new ArrayList<String>();
-        String text = "";
-        for(NoticiaEspecifca ne: noticiaEspecificaList){
-            if(ne.etext){
-                text = text + ne.text +'\n'+'\n';
-            }
+        title.setText(not.getTitulo());
 
-            if(ne.link){
-                links_list.add(ne.href);
-            }
+        String text = "";
+        for(String txt: not.getText()){
+            text = text + txt + "\n" + "\n";
+
         }
+        body.setText(text);
 //        mAdapter = new LinkAdapter(links_list);
 //        mRecyclerView.setAdapter(mAdapter);
-        body.setClickable(true);
-        body.setMovementMethod(LinkMovementMethod.getInstance());
-        body.setText(Html.fromHtml(text));
-    }*/
+        //body.setClickable(true);
+        //body.setMovementMethod(LinkMovementMethod.getInstance());
+        //body.setText(Html.fromHtml(text));
+    }
 
-    /*void getImages(){
-        for(NoticiaEspecifica ne: noticiaEspecificaList){
-            if(ne.eimg){
-                urls_img.add(ne.getImg());
-            }
+    void getImages(NoticiaEspecifica not){
+        for(Object img: not.getImages()){
+            Log.e("MaisNoticias",img.toString());
+            urls_img.add(img.toString());
         }
         if(!urls_img.isEmpty()){
             if(urls_img.size() > 1){
                 prox_view.setVisibility(View.VISIBLE);
             }
-            Picasso.with(NoticiaEspecificaActivity.this).load("http://ufpi.br"+urls_img.get(0)).into(img_id);
+            Picasso.with(NoticiaEspecificaActivity.this).load(urls_img.get(0)).into(img_id);
         }
 
-    }*/
+    }
 
 
 }

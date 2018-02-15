@@ -174,11 +174,11 @@ public class MapsInicio extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        switch (id){
+        switch (id) {
             case R.id.nav_home:
                 Intent intent = new Intent(getApplicationContext(), TelaHome2.class);
                 startActivity(intent);
-            break;
+                break;
             case R.id.nav_auditorio:
                 atualizarMapa(new FragmentAuditorio(), "Auditorio");
                 break;
@@ -215,9 +215,8 @@ public class MapsInicio extends AppCompatActivity
             case R.id.nav_salas:
                 atualizarMapa(new FragmentSalas(), "Salas de Aula");
                 break;
-            case R.id.nav_tracarrotas:
-                Intent intent2 = new Intent(getApplicationContext(), ErroActivity.class);
-                startActivity(intent2);
+            default:
+
                 break;
 
         }

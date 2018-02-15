@@ -49,13 +49,6 @@
 
             </menu>
         </item>
-        <item android:title="Rotas">
-            <menu>
-            <item
-                android:id="@+id/nav_tracarrotas"
-                android:title="Traçar Rotas" />
-            </menu>
-        </item>
     </group>
 
 </menu>

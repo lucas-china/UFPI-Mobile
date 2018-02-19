@@ -35,7 +35,7 @@ public class Eventos extends AppCompatActivity {
     private RequestQueue queue;
     private List<Evento> listaEvents;
     private RecyclerView.Adapter mAdapter;
-    String url = "https://ufpi-mobile-cm.herokuapp.com/api/notifications/5a43f41c5446bc001445e4af";
+    String url = "http://mobile.ufpi.br/api/notifications/5a43f41c5446bc001445e4af";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,9 +76,15 @@ public class Eventos extends AppCompatActivity {
                             Type listType = new TypeToken<ArrayList<Evento>>() {
                             }.getType();
                             listaEvents = new Gson().fromJson(response, listType);
+                            if(listaEvents != null){
+                                mAdapter = new EventoAdapter(listaEvents, getApplicationContext());
+                                recyclerView.setAdapter(mAdapter);
+                            }
+                            else {
+                                Toast toast = Toast.makeText(getApplicationContext(), "Nenhum evento cadastrado!!", Toast.LENGTH_LONG);
+                                toast.show();
+                            }
 
-                            mAdapter = new EventoAdapter(listaEvents, getApplicationContext());
-                            recyclerView.setAdapter(mAdapter);
                         }
                     }, new Response.ErrorListener() {
                 @Override

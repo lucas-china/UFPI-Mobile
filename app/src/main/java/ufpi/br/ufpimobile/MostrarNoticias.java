@@ -30,6 +30,7 @@ import ufpi.br.ufpimobile.adapter.ClickListener;
 import ufpi.br.ufpimobile.adapter.NoticiaAdapter;
 import ufpi.br.ufpimobile.adapter.RecyclerTouchListener;
 import ufpi.br.ufpimobile.model.Noticia;
+import ufpi.br.ufpimobile.model.NoticiaEspecifica;
 
 /**
  * Created by UFPI 236345 on 13/12/2017.
@@ -41,7 +42,7 @@ public class MostrarNoticias extends AppCompatActivity {
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
     private List<Noticia> noticiaList;
-    private ProgressBar progressBar;
+   // private ProgressBar progressBar;
     private TextView noticia;
 
     /**
@@ -87,7 +88,7 @@ public class MostrarNoticias extends AppCompatActivity {
 
         //String url = "https://ufpi-mobile-cm.herokuapp.com/api/articles";
 
-        String url = "https://ufpi-mobile-cm.herokuapp.com/api/articles";
+        String url = "http://mobile.ufpi.br/api/articles";
 
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
                 new Response.Listener<String>() {
@@ -115,10 +116,11 @@ public class MostrarNoticias extends AppCompatActivity {
             @Override
             public void onClick(View view, final int position) {
 
-                Toast toast = Toast.makeText(getApplicationContext(),"A noticia completa ainda está sendo feita!!", Toast.LENGTH_LONG);
-                toast.show();
+                //Toast toast = Toast.makeText(getApplicationContext(),"A noticia completa ainda está sendo feita!!", Toast.LENGTH_LONG);
+                // toast.show();
 
                 int code = noticiaList.get(position).getCode();
+                String href = noticiaList.get(position).getHref();
 
                 Intent troca = new Intent(MostrarNoticias.this, NoticiaEspecificaActivity.class);
                 troca.putExtra("code", code);

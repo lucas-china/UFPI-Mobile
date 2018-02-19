@@ -80,39 +80,71 @@
             android:name=".Eventos"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".TelaHome"
-            android:screenOrientation="portrait" />
-        <activity
             android:name=".MapsInicio"
             android:label="@string/title_activity_maps_inicio"
             android:theme="@style/AppTheme" />
         <activity
             android:name=".VerCardapio"
             android:label="@string/title_activity_ver_cardapio"
-            android:theme="@style/AppTheme" />
-        <activity android:name=".CardapioSemana" />
-        <activity android:name=".NoticiaEspecificaActivity" />
-        <activity android:name=".ShowImages" />
-        <activity android:name=".EscolherCalendario" />
-        <activity android:name=".CalendarioCTT" />
-        <activity android:name=".CalendarioPos" />
-        <activity android:name=".ManualCalouro" />
-        <activity android:name=".Informacao" />
-        <activity android:name=".SIC" />
-        <activity android:name=".DadosAbertos" />
-        <activity android:name=".Ensino" />
-        <activity android:name=".Tecnico" />
-        <activity android:name=".Graduacao" />
-        <activity android:name=".StrictoSensu" />
-        <activity android:name=".LatoSensu" />
+            android:theme="@style/AppTheme"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".CardapioSemana"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".NoticiaEspecificaActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".ShowImages"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".EscolherCalendario"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".CalendarioCTT"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".CalendarioPos"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".ManualCalouro"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".Informacao"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".SIC"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".DadosAbertos"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".Ensino"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".Tecnico"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".Graduacao"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".StrictoSensu"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".LatoSensu"
+            android:screenOrientation="portrait"/>
+
         <activity
             android:name=".TelaHome2"
             android:label="@string/title_activity_tela_home2"
-            android:theme="@style/AppTheme" />
+            android:theme="@style/AppTheme"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".Onibus"
             android:label="@string/title_activity_onibus"
-            android:theme="@style/AppTheme"></activity>
+            android:theme="@style/AppTheme"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".NovaNoticia"/>
     </application>
 
 </manifest>

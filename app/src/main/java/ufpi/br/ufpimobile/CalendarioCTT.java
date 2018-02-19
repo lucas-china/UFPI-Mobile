@@ -46,7 +46,7 @@ public class CalendarioCTT extends AppCompatActivity {
 
     public RequestQueue queue;
     private List<CalendarioDAO> listCalendario;
-    String url = "https://ufpi-mobile-cm.herokuapp.com/api/calendars/5a54e123dcb95d00049f3d9e?kind=ctt";
+    String url = "http://mobile.ufpi.br/api/calendars/5a74a95318e3ee48319a55ce?kind=ctt";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

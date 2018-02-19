@@ -86,65 +86,65 @@
         <activity
             android:name=".VerCardapio"
             android:label="@string/title_activity_ver_cardapio"
-            android:theme="@style/AppTheme"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".CardapioSemana"
-            android:screenOrientation="portrait"/>
-
-        <activity android:name=".NoticiaEspecificaActivity"
-            android:screenOrientation="portrait"/>
-
-        <activity android:name=".ShowImages"
-            android:screenOrientation="portrait"/>
-
-        <activity android:name=".EscolherCalendario"
-            android:screenOrientation="portrait"/>
-
-        <activity android:name=".CalendarioCTT"
-            android:screenOrientation="portrait"/>
-
-        <activity android:name=".CalendarioPos"
-            android:screenOrientation="portrait"/>
-
-        <activity android:name=".ManualCalouro"
-            android:screenOrientation="portrait"/>
-
-        <activity android:name=".Informacao"
-            android:screenOrientation="portrait"/>
-
-        <activity android:name=".SIC"
-            android:screenOrientation="portrait"/>
-
-        <activity android:name=".DadosAbertos"
-            android:screenOrientation="portrait"/>
-
-        <activity android:name=".Ensino"
-            android:screenOrientation="portrait"/>
-
-        <activity android:name=".Tecnico"
-            android:screenOrientation="portrait"/>
-
-        <activity android:name=".Graduacao"
-            android:screenOrientation="portrait"/>
-
-        <activity android:name=".StrictoSensu"
-            android:screenOrientation="portrait"/>
-
-        <activity android:name=".LatoSensu"
-            android:screenOrientation="portrait"/>
-
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".CardapioSemana"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".NoticiaEspecificaActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ShowImages"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".EscolherCalendario"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".CalendarioCTT"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".CalendarioPos"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ManualCalouro"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Informacao"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".SIC"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".DadosAbertos"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Ensino"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Tecnico"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Graduacao"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".StrictoSensu"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".LatoSensu"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".TelaHome2"
             android:label="@string/title_activity_tela_home2"
-            android:theme="@style/AppTheme"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
         <activity
             android:name=".Onibus"
             android:label="@string/title_activity_onibus"
-            android:theme="@style/AppTheme"
-            android:screenOrientation="portrait"/>
-
-        <activity android:name=".NovaNoticia"/>
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity android:name=".NovaNoticia" />
+        <activity android:name=".Colaboradores"></activity>
     </application>
 
 </manifest>

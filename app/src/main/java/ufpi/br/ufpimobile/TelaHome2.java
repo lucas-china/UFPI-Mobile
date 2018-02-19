@@ -212,7 +212,8 @@ public class TelaHome2 extends AppCompatActivity
             Intent intent = new Intent(getApplicationContext(), SobreNos.class);
             startActivity(intent);
         } else if (id == R.id.nav_colaboradores) {
-
+            Intent intent = new Intent(getApplicationContext(), Colaboradores.class);
+            startActivity(intent);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

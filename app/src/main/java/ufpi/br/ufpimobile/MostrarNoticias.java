@@ -23,12 +23,16 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
 import java.lang.reflect.Type;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 import ufpi.br.ufpimobile.adapter.ClickListener;
 import ufpi.br.ufpimobile.adapter.NoticiaAdapter;
 import ufpi.br.ufpimobile.adapter.RecyclerTouchListener;
+import ufpi.br.ufpimobile.controllers.TestConnection;
 import ufpi.br.ufpimobile.model.Noticia;
 import ufpi.br.ufpimobile.model.NoticiaEspecifica;
 
@@ -42,7 +46,7 @@ public class MostrarNoticias extends AppCompatActivity {
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
     private List<Noticia> noticiaList;
-   // private ProgressBar progressBar;
+    private TextView updateNews;
     private TextView noticia;
 
     /**
@@ -56,7 +60,7 @@ public class MostrarNoticias extends AppCompatActivity {
         setContentView(R.layout.activity_noticias);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_Noticias);
-        toolbar.setTitle("Noticias UFPI");
+        toolbar.setTitle("Notícias UFPI");
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
@@ -71,6 +75,9 @@ public class MostrarNoticias extends AppCompatActivity {
 
         noticia = (TextView) findViewById(R.id.show);
 
+        updateNews = (TextView) findViewById(R.id.tvAtualizacao);
+
+        updateNews.setText("Última atualização das notícias: " + CalcularHora() + ":00");
 
         //final TextView noticia = (TextView) findViewById(R.id.show);
 //        List<Noticia> noticiaList = new ArrayList<Noticia>();
@@ -86,63 +93,79 @@ public class MostrarNoticias extends AppCompatActivity {
 
         queue = Volley.newRequestQueue(this);
 
-        //String url = "https://ufpi-mobile-cm.herokuapp.com/api/articles";
 
         String url = "http://mobile.ufpi.br/api/articles";
 
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        // Display the first 500 characters of the response string.
+        if (new TestConnection(getApplicationContext()).isConnected()) {
+
+            StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
+                    new Response.Listener<String>() {
+                        @Override
+                        public void onResponse(String response) {
+                            // Display the first 500 characters of the response string.
 //                        noticia.setText("Response is: "+ response.toString());
-                        Type listType = new TypeToken<ArrayList<Noticia>>() {
-                        }.getType();
-                        noticiaList = new Gson().fromJson(response.toString(), listType);
+                            Type listType = new TypeToken<ArrayList<Noticia>>() {
+                            }.getType();
+                            noticiaList = new Gson().fromJson(response.toString(), listType);
 //                                noticia.setText(noticiaList .toString());
-                        mAdapter = new NoticiaAdapter(noticiaList);
-                        mRecyclerView.setAdapter(mAdapter);
-                    }
-                }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                //noticia.setText("That didn't work!");
-            }
-        });
-        queue.add(stringRequest);
+                            mAdapter = new NoticiaAdapter(noticiaList);
+                            mRecyclerView.setAdapter(mAdapter);
+                        }
+                    }, new Response.ErrorListener() {
+                @Override
+                public void onErrorResponse(VolleyError error) {
+                    //noticia.setText("That didn't work!");
+                }
+            });
+            queue.add(stringRequest);
 
-        mRecyclerView.addOnItemTouchListener(new RecyclerTouchListener(this,
-                mRecyclerView, new ClickListener() {
-            @Override
-            public void onClick(View view, final int position) {
+            mRecyclerView.addOnItemTouchListener(new RecyclerTouchListener(this,
+                    mRecyclerView, new ClickListener() {
+                @Override
+                public void onClick(View view, final int position) {
 
-                //Toast toast = Toast.makeText(getApplicationContext(),"A noticia completa ainda está sendo feita!!", Toast.LENGTH_LONG);
-                // toast.show();
+                    //Toast toast = Toast.makeText(getApplicationContext(),"A noticia completa ainda está sendo feita!!", Toast.LENGTH_LONG);
+                    // toast.show();
 
-                int code = noticiaList.get(position).getCode();
-                String href = noticiaList.get(position).getHref();
+                    int code = noticiaList.get(position).getCode();
+                   // String href = noticiaList.get(position).getHref();
 
-                Intent troca = new Intent(MostrarNoticias.this, NoticiaEspecificaActivity.class);
-                troca.putExtra("code", code);
+                    Intent troca = new Intent(MostrarNoticias.this, NoticiaEspecificaActivity.class);
+                    troca.putExtra("code", code);
 
-                MostrarNoticias.this.startActivity(troca);
-
-                /*String href = noticiaList.get(position).getHref();
-                // String code = noticiaList.get(position).getCode();
-                String title = noticiaList.get(position).getTitulo();
-                Intent troca = new Intent(MostrarNoticias.this, NoticiaEspecificaActivity.class);
-                troca.putExtra("href", href);
-                troca.putExtra("title", title);
-                MostrarNoticias.this.startActivity(troca);*/
-
-            }
-
-            @Override
-            public void onLongClick(View view, int position) {
-
-            }
-        }));
+                    MostrarNoticias.this.startActivity(troca);
 
 
+                }
+
+                @Override
+                public void onLongClick(View view, int position) {
+
+                }
+            }));
+        }
+        else {
+            Toast toast = Toast.makeText(getApplicationContext(), "Verifique sua conexão com a internet!", Toast.LENGTH_LONG);
+            toast.show();
+        }
+
+
+    }
+
+    private String CalcularHora(){
+
+        SimpleDateFormat dateFormat_hora = new SimpleDateFormat("HH:mm:ss");
+
+        Date data = new Date();
+
+        Calendar  cal = Calendar.getInstance();
+        cal.setTime(data);
+        int hora = cal.get(Calendar.HOUR_OF_DAY);
+
+        String hora_atual = String.valueOf(hora-1);
+
+
+
+        return hora_atual;
     }
 }

@@ -13,6 +13,9 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ProgressBar;
+import android.widget.Toast;
+
+import ufpi.br.ufpimobile.controllers.TestConnection;
 
 public class Sigaa extends AppCompatActivity {
 
@@ -48,12 +51,20 @@ public class Sigaa extends AppCompatActivity {
         sigaa = (WebView) findViewById(R.id.activity_main_webview);
         progressBar = (ProgressBar) findViewById(R.id.progressBar1);
 
-        WebSettings webSettings = sigaa.getSettings();
-        webSettings.setJavaScriptEnabled(true);
-        webSettings.setDisplayZoomControls(true);
-        webSettings.setSupportZoom(true);
-        sigaa.loadUrl(url);
-        sigaa.setWebViewClient(new HelloWebViewClient());
+        if (new TestConnection(getApplicationContext()).isConnected()) {
+
+            WebSettings webSettings = sigaa.getSettings();
+            webSettings.setJavaScriptEnabled(true);
+            webSettings.setDisplayZoomControls(true);
+            webSettings.setSupportZoom(true);
+            sigaa.loadUrl(url);
+            sigaa.setWebViewClient(new HelloWebViewClient());
+
+        }
+        else {
+            Toast toast = Toast.makeText(getApplicationContext(), "Verifique sua conexão com a internet!", Toast.LENGTH_LONG);
+            toast.show();
+        }
     }
 
     private class HelloWebViewClient extends WebViewClient {

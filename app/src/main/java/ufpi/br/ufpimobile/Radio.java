@@ -83,7 +83,7 @@ public class Radio extends AppCompatActivity {
             });
         }
         else {
-            Toast toast = Toast.makeText(getApplicationContext(), "Sem acesso a Internet!!", Toast.LENGTH_LONG);
+            Toast toast = Toast.makeText(getApplicationContext(), "Verifique sua conexão com a internet!", Toast.LENGTH_LONG);
             toast.show();
         }
 

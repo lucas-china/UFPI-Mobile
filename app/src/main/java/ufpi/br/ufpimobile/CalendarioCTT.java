@@ -46,12 +46,27 @@ public class CalendarioCTT extends AppCompatActivity {
 
     public RequestQueue queue;
     private List<CalendarioDAO> listCalendario;
-    String url = "http://mobile.ufpi.br/api/calendars/5a74a95318e3ee48319a55ce?kind=ctt";
+    String url = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calendario_ctt);
+
+        Intent intent = getIntent();
+        String ctt = intent.getStringExtra("ctt");
+
+        switch (ctt){
+            case "the": url = "http://mobile.ufpi.br/api/calendars/5a74a95318e3ee48319a55ce?kind=ctt&campus=Teresina";
+                break;
+            case "flo": url = "http://mobile.ufpi.br/api/calendars/5aa1df0e6e7ed539b7d67f93?kind=ctt&campus=FLORIANO";
+                break;
+            case "bj": url = "http://mobile.ufpi.br/api/calendars/5aa1df0e6e7ed539b7d67f93?kind=ctt&campus=BOMJESUS";
+                break;
+            default: url = "http://mobile.ufpi.br/api/calendars/5a74a95318e3ee48319a55ce?kind=ctt&campus=Teresina";
+
+
+        }
 
         final List<String> informacoes = new ArrayList<>();
 
@@ -86,7 +101,7 @@ public class CalendarioCTT extends AppCompatActivity {
             fetchPosts();
         }
         else {
-            Toast toast = Toast.makeText(getApplicationContext(), "Sem acesso a Internet!!", Toast.LENGTH_LONG);
+            Toast toast = Toast.makeText(getApplicationContext(), "Verifique sua conexão com a internet!", Toast.LENGTH_LONG);
             toast.show();
 
         }

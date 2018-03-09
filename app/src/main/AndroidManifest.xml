@@ -4,6 +4,7 @@
 
     <!-- Acesso a internet -->
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
@@ -143,8 +144,15 @@
             android:label="@string/title_activity_onibus"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
-        <activity android:name=".NovaNoticia" />
-        <activity android:name=".Colaboradores"></activity>
+        <activity
+            android:name=".cardapioRU"
+            android:screenOrientation="landscape" />
+        <activity android:name=".Colaboradores" />
+        <activity android:name=".CalendarioEAD" />
+        <activity android:name=".CalendarioLEDOC" />
+        <activity android:name=".CalendarioPARFOR" />
+        <activity android:name=".EscolherCalendarioCTT" />
+        <activity android:name=".EscolherOnibus"></activity>
     </application>
 
 </manifest>

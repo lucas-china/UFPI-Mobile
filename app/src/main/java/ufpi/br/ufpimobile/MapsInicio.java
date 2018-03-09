@@ -66,8 +66,10 @@ public class MapsInicio extends AppCompatActivity
             asyncTask.execute("https://infidel-gleams.000webhostapp.com/ufpimaps.json");
             gerarMapa();
         } else {
-            Intent iniciarWifi = new Intent(android.provider.Settings.ACTION_WIFI_SETTINGS);
+            //Intent iniciarWifi = new Intent(android.provider.Settings.ACTION_WIFI_SETTINGS);
             //  criarTelaDeAlerta("Sem conexão", "Iniciar Conexão WiFi?", iniciarWifi, null, 1);
+            Toast toast = Toast.makeText(getApplicationContext(), "Verifique sua conexão com a internet!", Toast.LENGTH_LONG);
+            toast.show();
         }
 
 

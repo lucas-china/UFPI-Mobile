@@ -4,50 +4,36 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#fff"
-    tools:context="ufpi.br.ufpimobile.CardapioSemana">
+    tools:context="ufpi.br.ufpimobile.EscolherOnibus">
 
     <include
-        android:id="@+id/toolbar_CardSemana"
-        layout="@layout/toolbar"
-        />
+        android:id="@+id/toolbar_EscolherOnibus"
+        layout="@layout/toolbar"/>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:layout_gravity="center"
         android:paddingTop="16dp"
         android:paddingStart="12dp"
         android:paddingEnd="12dp">
 
-
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/the"
-            android:text="TERESINA"
+            android:id="@+id/ot"
+            android:text="Ônibus Teresina"
             android:textColor="#fff"
             android:background="@drawable/style_botton2"
             android:textSize="16sp"
-
             />
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/picos"
-            android:text="PICOS"
-            android:background="@drawable/style_botton2"
-            android:textSize="16sp"
-            android:textColor="#fff"
-            android:layout_marginTop="30dp"
-            />
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/bj"
-            android:text="BOM JESUS"
+            android:id="@+id/op"
+            android:text="Ônibus Picos"
             android:background="@drawable/style_botton2"
             android:textSize="16sp"
             android:textColor="#fff"
@@ -57,8 +43,8 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/phb"
-            android:text="PARNAIBA"
+            android:id="@+id/obj"
+            android:text="Ônibus Bom Jesus"
             android:background="@drawable/style_botton2"
             android:textSize="16sp"
             android:textColor="#fff"
@@ -68,13 +54,25 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/flo"
-            android:text="FLORIANO"
-            android:textColor="#fff"
+            android:id="@+id/ctf"
+            android:text="Ônibus Colégio Técnico Floriano"
             android:background="@drawable/style_botton2"
             android:textSize="16sp"
+            android:textColor="#fff"
             android:layout_marginTop="30dp"
             />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/ctbj"
+            android:text="Ônibus Colégio Técnico Bom Jesus"
+            android:background="@drawable/style_botton2"
+            android:textSize="16sp"
+            android:textColor="#fff"
+            android:layout_marginTop="30dp"
+            />
+
 
 
     </LinearLayout>

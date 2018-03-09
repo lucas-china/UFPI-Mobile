@@ -30,7 +30,7 @@ public class ManualCalouro extends AppCompatActivity implements
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_manual_calouro);
 
-        //Alterar o texto da toolbar para a data selecionada
+
         toolbar = (Toolbar) findViewById(R.id.toolbar_ManualCalouro);
         toolbar.setTitle("Guia do Calouro");
         setSupportActionBar(toolbar);

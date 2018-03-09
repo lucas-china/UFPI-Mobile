@@ -55,6 +55,7 @@ public class NoticiaEspecificaActivity extends AppCompatActivity {
     private LinearLayout layout;
     private Integer it_img;
     private View prox_view;
+
 //    private RecyclerView mRecyclerView;
 //    private RecyclerView.Adapter mAdapter;
 //    private RecyclerView.LayoutManager mLayoutManager;
@@ -156,7 +157,7 @@ public class NoticiaEspecificaActivity extends AppCompatActivity {
     void noticiaProcess(NoticiaEspecifica not){
         //System.out.println(noticiaEspecificaList.toString());
         title.setText(not.getTitulo());
-        List<String> links_list = new ArrayList<String>();
+        //List<String> links_list = new ArrayList<String>();
         String text = "";
         for(String txt: not.getText()){
             text = text + txt + "\n" + "\n";
@@ -168,7 +169,7 @@ public class NoticiaEspecificaActivity extends AppCompatActivity {
 //        mRecyclerView.setAdapter(mAdapter);
         body.setClickable(true);
         body.setMovementMethod(LinkMovementMethod.getInstance());
-       // body.setText(Html.fromHtml(text));
+        body.setText(Html.fromHtml(text));
     }
 
     void getImages(NoticiaEspecifica not){

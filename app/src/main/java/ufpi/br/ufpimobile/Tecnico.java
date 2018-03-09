@@ -45,6 +45,8 @@ public class Tecnico extends AppCompatActivity {
         tec = (WebView) findViewById(R.id.activity_main_webview);
         progressBar = (ProgressBar) findViewById(R.id.progressBar1);
 
+
+
         if (new TestConnection(getApplicationContext()).isConnected()) {
             WebSettings webSettings = tec.getSettings();
             webSettings.setJavaScriptEnabled(true);
@@ -54,7 +56,7 @@ public class Tecnico extends AppCompatActivity {
             tec.setWebViewClient(new Tecnico.HelloWebViewClient());
         }
         else {
-            Toast toast = Toast.makeText(getApplicationContext(), "Sem acesso a Internet!!", Toast.LENGTH_LONG);
+            Toast toast = Toast.makeText(getApplicationContext(), "Verifique sua conexão com a internet!", Toast.LENGTH_LONG);
             toast.show();
         }
     }

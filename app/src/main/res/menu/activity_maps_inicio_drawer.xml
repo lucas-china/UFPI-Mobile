@@ -12,7 +12,7 @@
             <menu>
                 <item
                     android:id="@+id/nav_auditorio"
-                    android:title="Auditorios" />
+                    android:title="Auditórios" />
                 <item
                     android:id="@+id/nav_banheiros"
                     android:title="Banheiros" />
@@ -30,10 +30,10 @@
                     android:title="Departamentos" />
                 <item
                     android:id="@+id/nav_onibus"
-                    android:title="Estacoes de Onibus" />
+                    android:title="Estações de Ônibus" />
                 <item
                     android:id="@+id/nav_laboratorios"
-                    android:title="Laboratorio" />
+                    android:title="Laboratório" />
                 <item
                     android:id="@+id/nav_lanchonetes"
                     android:title="Lanchonetes" />
@@ -42,7 +42,7 @@
                     android:title="Órgãos Centrais" />
                 <item
                     android:id="@+id/nav_posgraduacao"
-                    android:title="Pós-Graduacao" />
+                    android:title="Pós-Graduacão" />
                 <item
                     android:id="@+id/nav_salas"
                     android:title="Salas de Aula" />

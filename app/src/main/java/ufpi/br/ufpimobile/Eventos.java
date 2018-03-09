@@ -35,7 +35,7 @@ public class Eventos extends AppCompatActivity {
     private RequestQueue queue;
     private List<Evento> listaEvents;
     private RecyclerView.Adapter mAdapter;
-    String url = "http://mobile.ufpi.br/api/notifications/5a43f41c5446bc001445e4af";
+    String url = "http://mobile.ufpi.br/api/notifications/5a8b3e5e4d26300476941159";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -96,7 +96,7 @@ public class Eventos extends AppCompatActivity {
             queue.add(stringRequest);
         }
         else {
-            Toast toast = Toast.makeText(getApplicationContext(), "Sem acesso a Internet!!", Toast.LENGTH_LONG);
+            Toast toast = Toast.makeText(getApplicationContext(), "Verifique sua conexão com a internet !", Toast.LENGTH_LONG);
             toast.show();
         }
 

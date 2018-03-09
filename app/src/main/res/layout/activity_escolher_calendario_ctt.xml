@@ -4,50 +4,36 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#fff"
-    tools:context="ufpi.br.ufpimobile.CardapioSemana">
+    tools:context="ufpi.br.ufpimobile.EscolherCalendarioCTT">
 
     <include
-        android:id="@+id/toolbar_CardSemana"
-        layout="@layout/toolbar"
-        />
+        android:id="@+id/toolbar_EscolherCalendarioCTT"
+        layout="@layout/toolbar"/>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:layout_gravity="center"
         android:paddingTop="16dp"
         android:paddingStart="12dp"
         android:paddingEnd="12dp">
 
-
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/the"
-            android:text="TERESINA"
+            android:id="@+id/cttTHE"
+            android:text="Colégio Técnico de Teresina"
             android:textColor="#fff"
             android:background="@drawable/style_botton2"
             android:textSize="16sp"
-
             />
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/picos"
-            android:text="PICOS"
-            android:background="@drawable/style_botton2"
-            android:textSize="16sp"
-            android:textColor="#fff"
-            android:layout_marginTop="30dp"
-            />
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/bj"
-            android:text="BOM JESUS"
+            android:id="@+id/cttBJ"
+            android:text="Colégio Técnico de Bom Jesus"
             android:background="@drawable/style_botton2"
             android:textSize="16sp"
             android:textColor="#fff"
@@ -57,26 +43,13 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/phb"
-            android:text="PARNAIBA"
+            android:id="@+id/cttFlo"
+            android:text="Colégio Técnico de Floriano"
             android:background="@drawable/style_botton2"
             android:textSize="16sp"
             android:textColor="#fff"
             android:layout_marginTop="30dp"
             />
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/flo"
-            android:text="FLORIANO"
-            android:textColor="#fff"
-            android:background="@drawable/style_botton2"
-            android:textSize="16sp"
-            android:layout_marginTop="30dp"
-            />
-
-
     </LinearLayout>
 
 </LinearLayout>

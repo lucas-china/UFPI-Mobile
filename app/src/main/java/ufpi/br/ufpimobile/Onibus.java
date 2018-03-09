@@ -21,22 +21,47 @@ public class Onibus extends AppCompatActivity implements
         OnPageChangeListener,OnLoadCompleteListener {
 
     private static final String TAG = Onibus.class.getSimpleName();
-    public static final String SAMPLE_FILE = "onibusBJ.pdf";
+    private String SAMPLE_FILE = "";
     PDFView pdfView;
     Integer pageNumber = 0;
     String pdfFileName;
-    private Toolbar toolbar;
+    private String toolbarName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_onibus);
+
+        Intent intent = getIntent();
+        String bus = intent.getStringExtra("bus");
+
+        switch (bus){
+            case "ot": SAMPLE_FILE = "onibusUFPI_TERESINA.pdf";
+                toolbarName = "Ônibus Teresina";
+                break;
+            case "op": SAMPLE_FILE = "onibusCSHNB_PICOS.pdf";
+                toolbarName = "Ônibus Picos";
+                break;
+            case "obj": SAMPLE_FILE = "onibusBJ.pdf";
+                toolbarName = "Ônibus Bom Jesus";
+                break;
+            case "ctf": SAMPLE_FILE = "onibusCTF_FLORIANO.pdf";
+                toolbarName = "Ônibus CT Floriano";
+                break;
+            case "ctbj": SAMPLE_FILE = "onibusCTBJ_BOMJESUS.pdf";
+                toolbarName = "Ônibus CT Bom Jesus";
+                break;
+            default: SAMPLE_FILE = "onibusUFPI_TERESINA.pdf";
+                toolbarName = "Ônibus Teresina";
+
+
+        }
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         //Alterar o texto da toolbar para a data selecionada
         toolbar = (Toolbar) findViewById(R.id.toolbar_Onibus);
-        toolbar.setTitle("Ônibus Bom Jesus");
+        toolbar.setTitle(toolbarName);
         setSupportActionBar(toolbar);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);

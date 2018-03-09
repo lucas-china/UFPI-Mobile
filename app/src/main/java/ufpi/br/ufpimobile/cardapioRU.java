@@ -12,20 +12,47 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ProgressBar;
 
-public class NovaNoticia extends AppCompatActivity {
+public class cardapioRU extends AppCompatActivity {
 
     private WebView noticia;
     private Toolbar toolbar;
     ProgressBar progressBar;
     private String url="";
+    String tb;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nova_noticia);
 
+        Intent intent = getIntent();
+        String ru = intent.getStringExtra("ru");
+
+        switch (ru){
+            case "the": url = "http://mobile.ufpi.br/pdfs/cardapio_teresina.pdf";
+                tb = "Cardápio Teresina";
+                break;
+            case "picos": url = "http://mobile.ufpi.br/pdfs/cardapio_picos.pdf";
+                tb = "Cardápio Picos";
+                break;
+            case "bj": url = "http://mobile.ufpi.br/pdfs/cardapio_bomjesus.pdf";
+                tb = "Cardápio Bom Jesus";
+                break;
+            case "phb": url = "http://mobile.ufpi.br/pdfs/cardapio_parnaiba.pdf";
+                tb = "Cardápio Parnaíba";
+                break;
+            case "flo": url = "http://mobile.ufpi.br/pdfs/cardapio_floriano.pdf";
+                tb = "Cardápio Floriano";
+                break;
+            default: url = "http://mobile.ufpi.br/pdfs/cardapio_teresina.pdf";
+                tb = "Cardápio Teresina";
+
+        }
+
+
+
         toolbar = (Toolbar) findViewById(R.id.toolbar_NovaNot);
-        toolbar.setTitle("Notícias UFPI");
+        toolbar.setTitle(tb);
         setSupportActionBar(toolbar);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -33,27 +60,22 @@ public class NovaNoticia extends AppCompatActivity {
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent home = new Intent(getApplicationContext(), MostrarNoticias.class);
+                Intent home = new Intent(getApplicationContext(), CardapioSemana.class);
                 finish();
                 startActivity(home);
             }
         });
 
-        Intent intent = getIntent();
-        Bundle bd = intent.getExtras();
-        String href = (String) bd.get("href");
-
-        url = href;
 
         noticia = (WebView) findViewById(R.id.activity_main_webview);
         progressBar = (ProgressBar) findViewById(R.id.progressBar1);
 
         WebSettings webSettings = noticia.getSettings();
         webSettings.setJavaScriptEnabled(true);
-        webSettings.setDisplayZoomControls(true);
-        webSettings.setSupportZoom(true);
-        noticia.loadUrl(url);
-        noticia.setWebViewClient(new NovaNoticia.HelloWebViewClient());
+        //webSettings.setDisplayZoomControls(true);
+        //webSettings.setSupportZoom(true);
+        noticia.loadUrl("http://drive.google.com/viewerng/viewer?embedded=true&url=" + url);
+        noticia.setWebViewClient(new cardapioRU.HelloWebViewClient());
     }
 
     private class HelloWebViewClient extends WebViewClient {
@@ -98,6 +120,6 @@ public class NovaNoticia extends AppCompatActivity {
     }
 
     public void onBackPressed() {
-        NovaNoticia.this.finish();
+        cardapioRU.this.finish();
     }
 }

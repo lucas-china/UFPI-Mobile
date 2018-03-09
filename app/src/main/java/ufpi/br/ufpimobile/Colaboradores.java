@@ -33,10 +33,12 @@ public class Colaboradores extends AppCompatActivity {
             }
         });
 
-        data = new String[]{"Lucas Brito", "Vitor Cortez", "Rafael Henrique ", "Thiago Andrade", "Felipe Barro", "Carlos Cesar Pereira Lima Filho",
-        "Fabio Gomes Pessoa", "Jassiléa Rocha Gois", "Paulo Henrique Rodrigues Silva", "Roney Lira", "Saulo de Társio", "Hugo Piauilino", "José de Oliveira",
-        "Francisco Carlos", "Renato Souza", "Valeska Uchôa", "Alan Ribeiro", "Orlando Amorim", "Rafael Martins Barros", "Selles Gustavo", "Roberson Costa",
-        "Jardeson Barbosa", "Giovanni Emanuel", "prof. Ms. Armando Soares", "prof Dr. Ricardo Lira", "prof. Dr. Valdemir Junior"};
+        data = new String[]{"Lucas Santana Brito", "Vitor Augusto Correa Cortez Almeida", "Pedro Henrique Pinto Albuquerque" ,"Rafael Henrique Mendes Monteiro da Silva", "Thiago Andrade Borges", "Felipe Barros Caminha",
+                "Carlos Cesar Pereira Lima Filho", "Fabio Gomes Pessoa", "Jassiléa Rocha Gois", "Paulo Henrique Rodrigues Silva", "Roney Lira de Seles Santos", "Saulo de Társio Silva Sousa",
+                "Hugo Santos Piauilino Neto", "José de Oliveira Lins Neto", "Francisco Carlos Silva Junior", "Renato Souza", "Valeska de Sousa Uchôa", "Alan Ribeiro Andrade",
+                "Orlando Amorim Leite Filho", "Rafael Martins Barros", "Selles Gustavo Ferreira Carvalho Araújo",
+                "Roberson Costa", "Jardeson Leandro Nascimento Barbosa", "Giovanni Emanuel Vieira da Silva Santana", "prof. Ms. Armando Soares Sousa", "prof Dr. Ricardo de Andrade Lira Rabelo",
+                "prof. Dr. José Valdemir dos Reis Junior"};
 
         ListView listView = (ListView) findViewById(R.id.listaDevs);
 

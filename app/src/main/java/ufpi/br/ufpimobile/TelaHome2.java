@@ -171,7 +171,7 @@ public class TelaHome2 extends AppCompatActivity
                 startActivity(intent9);
                 break;
             case R.id.im_onibus:
-                Intent intent10 = new Intent(getApplicationContext(), Onibus.class);
+                Intent intent10 = new Intent(getApplicationContext(), EscolherOnibus.class);
                 startActivity(intent10);
                 break;
             default:

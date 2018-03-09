@@ -28,58 +28,50 @@ public class CardapioSemana extends AppCompatActivity {
             }
         });
 
-        final Button button = findViewById(R.id.seg);
+        final Button button = findViewById(R.id.the);
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                Intent i = new Intent(getApplicationContext(), VerCardapio.class);
-                i.putExtra("dia",1);
+                Intent i = new Intent(getApplicationContext(), cardapioRU.class);
+                i.putExtra("ru","the");
                 startActivity(i);
             }
         });
 
-        final Button button1 = findViewById(R.id.ter);
+        final Button button1 = findViewById(R.id.picos);
         button1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                Intent i = new Intent(getApplicationContext(), VerCardapio.class);
-                i.putExtra("dia",2);
+                Intent i = new Intent(getApplicationContext(), cardapioRU.class);
+                i.putExtra("ru","picos");
                 startActivity(i);
             }
         });
 
-        final Button button2 = findViewById(R.id.qua);
+        final Button button2 = findViewById(R.id.bj);
         button2.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                Intent i = new Intent(getApplicationContext(), VerCardapio.class);
-                i.putExtra("dia",3);
+                Intent i = new Intent(getApplicationContext(), cardapioRU.class);
+                i.putExtra("ru","bj");
                 startActivity(i);
             }
         });
 
-        final Button button3 = findViewById(R.id.qui);
+        final Button button3 = findViewById(R.id.phb);
         button3.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                Intent i = new Intent(getApplicationContext(), VerCardapio.class);
-                i.putExtra("dia",4);
+                Intent i = new Intent(getApplicationContext(), cardapioRU.class);
+                i.putExtra("ru","phb");
                 startActivity(i);
             }
         });
 
-        final Button button4 = findViewById(R.id.sex);
+        final Button button4 = findViewById(R.id.flo);
         button4.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                Intent i = new Intent(getApplicationContext(), VerCardapio.class);
-                i.putExtra("dia",5);
+                Intent i = new Intent(getApplicationContext(), cardapioRU.class);
+                i.putExtra("ru","flo");
                 startActivity(i);
             }
         });
 
-        final Button button5 = findViewById(R.id.sab);
-        button5.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                Intent i = new Intent(getApplicationContext(), VerCardapio.class);
-                i.putExtra("dia",6);
-                startActivity(i);
-            }
-        });
     }
 }

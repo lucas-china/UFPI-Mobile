@@ -23,7 +23,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/ctt"
-            android:text="Calendário Colégio Técnico - CTT"
+            android:text="Calendário Colégio Técnico"
             android:textColor="#fff"
             android:background="@drawable/style_botton2"
             android:textSize="16sp"

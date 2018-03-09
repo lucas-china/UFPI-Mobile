@@ -7,15 +7,15 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 
-public class EscolherCalendario extends AppCompatActivity {
+public class EscolherOnibus extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_escolher_calendario);
+        setContentView(R.layout.activity_escolher_onibus);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_EscolherCalendario);
-        toolbar.setTitle("Calendários Disponíveis");
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_EscolherOnibus);
+        toolbar.setTitle("Ônibus Disponíveis");
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
@@ -28,52 +28,51 @@ public class EscolherCalendario extends AppCompatActivity {
             }
         });
 
-        final Button button = findViewById(R.id.ctt);
+        final Button button = findViewById(R.id.ot);
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                Intent i = new Intent(getApplicationContext(), EscolherCalendarioCTT.class);
+                Intent i = new Intent(getApplicationContext(), Onibus.class);
+                i.putExtra("bus","ot");
                 startActivity(i);
             }
         });
 
-        final Button button1 = findViewById(R.id.grad);
+        final Button button1 = findViewById(R.id.op);
         button1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                Intent i = new Intent(getApplicationContext(), CalendarioGrad.class);
+                Intent i = new Intent(getApplicationContext(), Onibus.class);
+                i.putExtra("bus","op");
                 startActivity(i);
             }
         });
 
-        final Button button2 = findViewById(R.id.pos);
+        final Button button2 = findViewById(R.id.obj);
         button2.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                Intent i = new Intent(getApplicationContext(), CalendarioPos.class);
+                Intent i = new Intent(getApplicationContext(), Onibus.class);
+                i.putExtra("bus","obj");
                 startActivity(i);
             }
         });
 
-        final Button button3 = findViewById(R.id.ead);
+        final Button button3 = findViewById(R.id.ctf);
         button3.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                Intent i = new Intent(getApplicationContext(), CalendarioEAD.class);
+                Intent i = new Intent(getApplicationContext(), Onibus.class);
+                i.putExtra("bus","ctf");
                 startActivity(i);
             }
         });
 
-        final Button button4 = findViewById(R.id.ledoc);
+        final Button button4 = findViewById(R.id.ctbj);
         button4.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                Intent i = new Intent(getApplicationContext(), CalendarioLEDOC.class);
+                Intent i = new Intent(getApplicationContext(), Onibus.class);
+                i.putExtra("bus","ctbj");
                 startActivity(i);
             }
         });
 
-        final Button button5 = findViewById(R.id.parfor);
-        button5.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                Intent i = new Intent(getApplicationContext(), CalendarioPARFOR.class);
-                startActivity(i);
-            }
-        });
+
     }
 }

@@ -11,11 +11,22 @@
         android:id="@+id/toolbar_Noticias"
         layout="@layout/toolbar"/>
 
+    <TextView
+        android:id="@+id/tvAtualizacao"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="12dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="textEnd"
+        android:text="Última atualização das notícias há 01:00"/>
+
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/show_noticia"
         android:scrollbars="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="wrap_content"/>
+
+
 
 </LinearLayout>

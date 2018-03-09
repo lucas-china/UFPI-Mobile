@@ -1,10 +1,7 @@
 package ufpi.br.ufpimobile;
 
-import android.annotation.TargetApi;
 import android.content.Intent;
 import android.graphics.Color;
-import android.os.Build;
-import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -28,8 +25,6 @@ import com.google.gson.reflect.TypeToken;
 
 import java.lang.reflect.Type;
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -39,7 +34,7 @@ import java.util.Locale;
 import ufpi.br.ufpimobile.controllers.TestConnection;
 import ufpi.br.ufpimobile.model.CalendarioDAO;
 
-public class CalendarioGrad extends AppCompatActivity {
+public class CalendarioPARFOR extends AppCompatActivity {
 
     private static final String TAG = "TelaHome";
     private Calendar currentCalender = Calendar.getInstance(Locale.getDefault());
@@ -56,7 +51,7 @@ public class CalendarioGrad extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_calendario);
+        setContentView(R.layout.activity_calendario_parfor);
 
         final List<String> informacoes = new ArrayList<>();
 
@@ -71,7 +66,7 @@ public class CalendarioGrad extends AppCompatActivity {
 
 
         //Alterar o texto da toolbar para a data selecionada
-        toolbar = (Toolbar) findViewById(R.id.toolbar_Calendario);
+        toolbar = (Toolbar) findViewById(R.id.toolbar_CalendarioPARFOR);
         toolbar.setTitle(dateFormatForMonth.format(compactCalendarView.getFirstDayOfCurrentMonth()));
         setSupportActionBar(toolbar);
 
@@ -137,9 +132,7 @@ public class CalendarioGrad extends AppCompatActivity {
             }
 
         });
-
     }
-
 
     private View.OnClickListener getCalendarShowLis() {
         return new View.OnClickListener() {
@@ -177,7 +170,7 @@ public class CalendarioGrad extends AppCompatActivity {
     private final Response.ErrorListener onPostsError = new Response.ErrorListener() {
         @Override
         public void onErrorResponse(VolleyError error) {
-            Log.e("CalendarioGRADActivity", error.toString());
+            Log.e("CalendarioPARFOR", error.toString());
         }
     };
 
@@ -195,14 +188,14 @@ public class CalendarioGrad extends AppCompatActivity {
                     if (event.getEndTime() != 0){
 
                         for (long i = event.getStartTime() + 86400000; i <= event.getEndTime(); i = i + 86400000){
-                          
-                          eventos.add(new Event(Color.RED, i, event.getTitle()));
-                          
+
+                            eventos.add(new Event(Color.RED, i, event.getTitle()));
+
                         }
 
                     }
                     eventos.add(new Event(Color.BLUE, event.getStartTime(), event.getTitle()));
-                    
+
                 }
             }
 

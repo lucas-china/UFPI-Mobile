@@ -22,13 +22,13 @@
 
        <ImageView
            android:layout_width="170dp"
-           android:layout_height="200dp"
+           android:layout_height="130dp"
            android:src="@drawable/factos"/>
        <ImageView
-           android:layout_width="150dp"
-           android:layout_height="200dp"
+           android:layout_width="170dp"
+           android:layout_height="130dp"
            android:layout_marginStart="14dp"
-           android:src="@drawable/ufpi_sti"/>
+           android:src="@drawable/ufpi_sti2"/>
 
    </LinearLayout>
 

@@ -42,7 +42,7 @@ public class Onibus extends AppCompatActivity implements
             case "op": SAMPLE_FILE = "onibusCSHNB_PICOS.pdf";
                 toolbarName = "Ônibus Picos";
                 break;
-            case "obj": SAMPLE_FILE = "onibusBJ.pdf";
+            case "obj": SAMPLE_FILE = "onibusCAMPUS_BOMJESUS.pdf";
                 toolbarName = "Ônibus Bom Jesus";
                 break;
             case "ctf": SAMPLE_FILE = "onibusCTF_FLORIANO.pdf";

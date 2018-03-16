@@ -36,7 +36,7 @@
         android:paddingEnd="12dp"
         android:paddingStart="12dp"
         android:layout_alignParentEnd="true"
-        android:text="Bolinhas Azuis: data de início de evento"
+        android:text="Azul: data de início de evento"
         />
     <TextView
         android:id="@+id/legenda2"
@@ -46,13 +46,23 @@
         android:paddingStart="12dp"
         android:layout_alignParentEnd="true"
         android:layout_below="@id/legenda"
-        android:text="Bolinhas Vermelhas: eventos de mais de um dia"/>
+        android:text="Vermelha: eventos com mais de um dia de duração"/>
+
+    <TextView
+        android:id="@+id/legenda3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingEnd="12dp"
+        android:paddingStart="12dp"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@id/legenda2"
+        android:text="+ : mais de uma informação no mesmo dia"/>
 
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="fill_parent"
         android:id="@+id/calendar_control_buttons_2"
-        android:layout_below="@+id/legenda2"
+        android:layout_below="@+id/legenda3"
         android:layout_height="wrap_content">
 
 

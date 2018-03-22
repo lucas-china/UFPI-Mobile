@@ -59,6 +59,10 @@ public class ContatoUniAcademicasActivity extends AppCompatActivity {
         mContatosList.add(new Contato(27, "CCS","(86) 3215-5696","ccsdiretoria@ufpi.edu.br"));
         mContatosList.add(new Contato(28, "CCHL","(86) 3215-5770/5771","nelsonmatos@ig.com.br"));
         mContatosList.add(new Contato(29, "CT","(86) 3215-5698/5699","ct@ufpi.br"));
+        mContatosList.add(new Contato(30, "CTT","(86) 3215-5694","cat@ufpi.edu.br"));
+        mContatosList.add(new Contato(31, "CTF","(89) 3522-1768","não possui"));
+        mContatosList.add(new Contato(32, "CTBJ","(89) 3562-1103","não possui"));
+
 
 
         adapter = new ContatoListAdapter(getApplicationContext(), mContatosList);

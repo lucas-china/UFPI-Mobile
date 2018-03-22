@@ -34,7 +34,7 @@
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="@string/google_maps_key" />
+            android:value="AIzaSyAtpPx8mOlcSkobYz2CHdpuOCdWZmlprQA" />
 
         <activity
             android:name=".ErroActivity"
@@ -83,11 +83,6 @@
         <activity
             android:name=".MapsInicio"
             android:label="@string/title_activity_maps_inicio"
-            android:theme="@style/AppTheme" />
-        <activity
-            android:name=".VerCardapio"
-            android:label="@string/title_activity_ver_cardapio"
-            android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
         <activity
             android:name=".CardapioSemana"
@@ -147,12 +142,25 @@
         <activity
             android:name=".cardapioRU"
             android:screenOrientation="landscape" />
-        <activity android:name=".Colaboradores" />
-        <activity android:name=".CalendarioEAD" />
-        <activity android:name=".CalendarioLEDOC" />
-        <activity android:name=".CalendarioPARFOR" />
-        <activity android:name=".EscolherCalendarioCTT" />
-        <activity android:name=".EscolherOnibus"></activity>
+
+        <activity android:name=".Colaboradores"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".CalendarioEAD"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".CalendarioLEDOC"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".CalendarioPARFOR"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".EscolherCalendarioCTT"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".EscolherOnibus"
+            android:screenOrientation="portrait"/>
+
     </application>
 
 </manifest>

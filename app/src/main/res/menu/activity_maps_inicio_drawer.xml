@@ -42,7 +42,7 @@
                     android:title="Órgãos Centrais" />
                 <item
                     android:id="@+id/nav_posgraduacao"
-                    android:title="Pós-Graduacão" />
+                    android:title="Pós-Graduação" />
                 <item
                     android:id="@+id/nav_salas"
                     android:title="Salas de Aula" />

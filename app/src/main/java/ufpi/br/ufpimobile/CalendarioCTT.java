@@ -73,7 +73,7 @@ public class CalendarioCTT extends AppCompatActivity {
         final ListView datasListView = (ListView) findViewById(R.id.datas_listview);
         final Button slideCalendarBut = (Button) findViewById(R.id.slide_calendar);
 
-        final ArrayAdapter adapter = new ArrayAdapter(getApplicationContext(), android.R.layout.simple_list_item_1, informacoes);
+        final ArrayAdapter adapter = new ArrayAdapter(CalendarioCTT.this, android.R.layout.simple_list_item_1, informacoes);
         datasListView.setAdapter(adapter);
 
         compactCalendarView = (CompactCalendarView) findViewById(R.id.compactcalendar_view);
@@ -113,9 +113,9 @@ public class CalendarioCTT extends AppCompatActivity {
             public void onDayClick(Date dateClicked) {
                 toolbar.setTitle(dateFormatForMonth.format(dateClicked));
                 List<Event> bookingsFromMap = compactCalendarView.getEvents(dateClicked);
-                Log.d(TAG, "inside onclick " + dateFormatForDisplaying.format(dateClicked));
+
                 if (bookingsFromMap != null) {
-                    Log.d(TAG, bookingsFromMap.toString());
+
                     informacoes.clear();
                     for (Event booking : bookingsFromMap) {
                         informacoes.add((String) booking.getData());
@@ -185,7 +185,7 @@ public class CalendarioCTT extends AppCompatActivity {
     private final Response.ErrorListener onPostsError = new Response.ErrorListener() {
         @Override
         public void onErrorResponse(VolleyError error) {
-            Log.e("CalendarioCTTActivity", error.toString());
+
         }
     };
 

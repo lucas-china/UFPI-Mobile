@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
-        app:srcCompat="@drawable/logoufpinormal"
+        android:src="@drawable/logoufpinormal"
         android:layout_alignParentTop="true" />
 
     <ImageView
@@ -19,7 +19,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
        android:layout_below="@id/imageView5"
-        app:srcCompat="@drawable/layoutsplash" />
+        android:src="@drawable/layoutsplash" />
 
 
 

@@ -25,7 +25,7 @@
            android:layout_height="130dp"
            android:src="@drawable/factos"/>
        <ImageView
-           android:layout_width="170dp"
+           android:layout_width="157dp"
            android:layout_height="130dp"
            android:layout_marginStart="14dp"
            android:src="@drawable/ufpi_sti2"/>
@@ -50,9 +50,7 @@
         android:scrollbars="vertical"
         android:layout_marginStart="4dp"
         android:layout_marginEnd="4dp"
-        android:layout_marginTop="12dp">
-
-    </ListView>
+        android:layout_marginTop="12dp"/>
 
 
 </RelativeLayout>

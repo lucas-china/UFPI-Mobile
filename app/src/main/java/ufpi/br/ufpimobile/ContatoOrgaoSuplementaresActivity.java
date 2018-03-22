@@ -37,7 +37,7 @@ public class ContatoOrgaoSuplementaresActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_contato_orgao_suplementares);
         toolbar = (Toolbar) findViewById(R.id.tool_bar);
-        toolbar.setTitle("Orgãos Suplementares");
+        toolbar.setTitle("Órgãos Suplementares");
         setSupportActionBar(toolbar);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -60,11 +60,12 @@ public class ContatoOrgaoSuplementaresActivity extends AppCompatActivity {
         mContatosList.add(new Contato(16, "SCS","(86) 3237-1151","jacdourado@ufpi.edu.br"));
         mContatosList.add(new Contato(17, "COORDCOM","(86) 3215-5525","mauriciosantana@ufpi.edu.br"));
         mContatosList.add(new Contato(18, "EDUFPI","(86) 3215-5688","alaggior@uol.com.br"));
-        mContatosList.add(new Contato(19, "NTI","(86) 3215-5627","preuni@ufpi.edu.br"));
-        mContatosList.add(new Contato(20, "PREUNI","(86) 3215-5604/-5605","bccb@ufpi.edu.br"));
-        mContatosList.add(new Contato(21, "Bibliotecas","(86) 3237-1771","ouvidoria.hupi@ebserh.gov.br"));
-        mContatosList.add(new Contato(22, "HU - Hospital Universitário","(86) 3215-5988","hvucpce@ufpi.edu.br"));
-        mContatosList.add(new Contato(23, "HVU","(86) 3215-5537/5538","não possui"));
+        mContatosList.add(new Contato(19, "STI","(86) 3215-5627","não possui"));
+        mContatosList.add(new Contato(20, "PREUNI","(86) 3215-5604/-5605","preuni@ufpi.edu.br"));
+        mContatosList.add(new Contato(21, "Bibliotecas","(86) 3237-1771","bccb@ufpi.edu.br"));
+        mContatosList.add(new Contato(22, "HU - Hospital Universitário","(86) 3215-5988","ouvidoria.hupi@ebserh.gov.br"));
+        mContatosList.add(new Contato(23, "HVU","(86) 3215-5537/5538","hvucpce@ufpi.edu.br"));
+        mContatosList.add(new Contato(24, "Superintendência","(86) 3237-2211","coordenacao.ebtt@ufpi.edu.br"));
 
 
 

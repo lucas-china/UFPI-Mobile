@@ -14,14 +14,12 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="4"
+        android:layout_height="wrap_content"
         android:orientation="vertical">
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="2"
+            android:layout_height="wrap_content"
             android:background="#01579B"
             android:gravity="center"
             android:text="Horário de Funcionamento"
@@ -32,8 +30,7 @@
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="2"
+            android:layout_height="wrap_content"
             android:text="Segunda a Sexta:"
             android:textSize="20sp"
             android:textColor="#000"
@@ -42,14 +39,12 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="4"
+            android:layout_height="wrap_content"
             android:orientation="horizontal">
 
             <TextView
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="3"
                 android:text="Almoço"
                 android:textSize="20sp"
                 android:textColor="#000"
@@ -57,9 +52,8 @@
                 android:textAlignment="textStart" />
 
             <TextView
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="2"
                 android:text="11:00 - 13:30"
                 android:textSize="20sp"
                 android:textColor="#000"
@@ -70,13 +64,12 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="4"
+            android:layout_weight="2"
             android:orientation="horizontal">
 
             <TextView
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="3"
                 android:text="Jantar"
                 android:textSize="20sp"
                 android:textColor="#000"
@@ -84,28 +77,67 @@
                 android:textAlignment="textStart" />
 
             <TextView
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="2"
                 android:text="17:00 - 18:30"
                 android:textSize="20sp"
                 android:textColor="#000"
                 android:padding="8dp"
                 android:textAlignment="textEnd" />
         </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sábado:"
+            android:textSize="20sp"
+            android:textColor="#000"
+            android:padding="8dp"
+            android:textAlignment="textStart" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Almoço"
+                android:textSize="20sp"
+                android:textColor="#000"
+                android:padding="8dp"
+                android:textAlignment="textStart" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="11:00 - 13:00"
+                android:textSize="20sp"
+                android:textColor="#000"
+                android:padding="8dp"
+                android:textAlignment="textEnd" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="*Podem existir adequações nos horários para cada Campus."
+            android:textSize="16sp"
+            android:textColor="#000"
+            android:padding="8dp"
+            android:textAlignment="textStart" />
 
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="4"
+        android:layout_weight="3"
         android:orientation="vertical">
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="2"
+            android:layout_height="wrap_content"
             android:background="#01579B"
             android:gravity="center"
             android:text="Preços"
@@ -117,13 +149,13 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="4"
+            android:layout_weight="2"
             android:orientation="horizontal">
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="3"
+                android:layout_weight="2"
                 android:text="Alunos"
                 android:textSize="20sp"
                 android:textColor="#000"
@@ -144,14 +176,13 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="4"
+            android:layout_weight="2"
             android:orientation="horizontal">
 
             <TextView
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="3"
-                android:text="Funcionários e Terceirizados"
+                android:text="Funcionários/Terceirizados"
                 android:textSize="20sp"
                 android:textColor="#000"
                 android:padding="8dp"
@@ -171,7 +202,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="4"
+            android:layout_weight="2"
             android:orientation="horizontal">
 
             <TextView
@@ -196,6 +227,7 @@
         </LinearLayout>
 
     </LinearLayout>
+
 
     <Button
         android:id="@+id/cardapioButton"

@@ -65,7 +65,7 @@ public class ContatoOrgaoSuplementaresActivity extends AppCompatActivity {
         mContatosList.add(new Contato(21, "Bibliotecas","(86) 3237-1771","bccb@ufpi.edu.br"));
         mContatosList.add(new Contato(22, "HU - Hospital Universitário","(86) 3215-5988","ouvidoria.hupi@ebserh.gov.br"));
         mContatosList.add(new Contato(23, "HVU","(86) 3215-5537/5538","hvucpce@ufpi.edu.br"));
-        mContatosList.add(new Contato(24, "Superintendência","(86) 3237-2211","coordenacao.ebtt@ufpi.edu.br"));
+        mContatosList.add(new Contato(24, "SEBTT","(86) 3237-2211","coordenacao.ebtt@ufpi.edu.br"));
 
 
 
